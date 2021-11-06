@@ -1,0 +1,521 @@
+<!doctype html>
+<html>
+ <head>            
+  <style>/* Reworked by IntelliJ Team The MIT License (MIT) Copyright (c) JetBrains Adapted from https://github.com/sindresorhus/github-markdown-css The MIT License (MIT) Copyright (c) Sindre Sorhus &lt;sindresorhus@gmail.com&gt; (sindresorhus.com) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ @font-face { font-family: octicons-anchor; src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff'); } body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, freesans, sans-serif; font-size: 14px; line-height: 1.6; word-wrap: break-word; margin: 0 30px; } strong { font-weight: bold; } img { border: 0; } input { color: inherit; font: inherit; margin: 0; line-height: normal; } html input[disabled] { cursor: default; } input[type="checkbox"] { box-sizing: border-box; padding: 0; } body * { box-sizing: border-box; } input { font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; } a { text-decoration: none; } a:hover, a:active { text-decoration: underline; } hr { height: 1px; padding: 0; margin: 20px 0; border: 0 none; } hr:before { display: table; content: ""; } hr:after { display: table; clear: both; content: ""; } blockquote { margin: 0; } ul, ol { padding: 0; margin-top: 0; margin-bottom: 0; } ol ol, ul ol { list-style-type: lower-roman; } ul ul ol, ul ol ol, ol ul ol, ol ol ol { list-style-type: lower-alpha; } dd { margin-left: 0; } .octicon { font: normal normal normal 16px/1 octicons-anchor; display: inline-block; text-decoration: none; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .octicon-link:before { content: '\f05c'; } .markdown-body &gt; *:first-child { margin-top: 0 !important; } .markdown-body &gt; *:last-child { margin-bottom: 0 !important; } .anchor { position: absolute; top: 0; left: 0; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; } .anchor:focus { outline: none; } h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; } h1 .octicon-link, h2 .octicon-link, h3 .octicon-link, h4 .octicon-link, h5 .octicon-link, h6 .octicon-link { display: none; color: #000; vertical-align: middle; } h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; } h1:hover .anchor .octicon-link, h2:hover .anchor .octicon-link, h3:hover .anchor .octicon-link, h4:hover .anchor .octicon-link, h5:hover .anchor .octicon-link, h6:hover .anchor .octicon-link { display: inline-block; } h1 { font-size: 2.2em; padding-top: 0.6em; } h1 .anchor { line-height: 1; } h2 { font-size: 1.8em; line-height: 1.2; padding-top: 0.6em; } h2 .anchor { line-height: 1.2; } h3 { font-size: 1.3em; line-height: 1; padding-top: 0.6em; } h3 .anchor { line-height: 1.2; } h4 { font-size: 1em; } h4 .anchor { line-height: 1.2; } h5 { font-size: 1em; } h5 .anchor { line-height: 1.1; } h6 { font-size: 1em; } h6 .anchor { line-height: 1.1; } p, blockquote, ul, ol, dl, table, pre { margin-top: 16px; margin-bottom: 16px; } ul, ol { padding-left: 2em; } ul ul, ul ol, ol ol, ol ul { margin-top: 0; margin-bottom: 0; } li &gt; p { margin-top: 0; margin-bottom: 0; } dl { padding: 0; } dl dt { padding: 0; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; } dl dd { padding: 0 16px; margin-bottom: 16px; } blockquote { padding: 10px 10px 10px 16px; border-left: 2px solid; border-radius: 0 3px 3px 0; } blockquote &gt; :first-child { margin-top: 0; } blockquote &gt; :last-child { margin-bottom: 0; } table { display: block; width: 100%; overflow: auto; word-break: normal; border-collapse: collapse; border-spacing: 0; font-size: 1em; } table th { font-weight: bold; } table th, table td { padding: 6px 13px; background: transparent; } table tr { border-top: 1px solid; } img { max-width: 100%; box-sizing: border-box; } code { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } pre &gt; code { padding: 0; margin: 0; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0; } .highlight { margin-bottom: 16px; } .highlight pre, pre { font: 0.85em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 16px; overflow: auto; line-height: 1.45; border-radius: 3px; } pre code { display: inline; max-width: initial; padding: 0; margin: 0; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0; } pre code:before, pre code:after { content: normal; } kbd { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } .task-list-item { list-style-type: none; } .task-list-item + .task-list-item { margin-top: 3px; } .task-list-item input { margin: 0 0.35em 0.25em -0.6em; vertical-align: middle; } :checked + .radio-label { z-index: 1; position: relative; } span.user-del { text-decoration: line-through; } ::-webkit-scrollbar { width: 6px; height: 6px; } ::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; } ::-webkit-scrollbar-track:vertical { -webkit-box-shadow: -1px 0 0 #ededed; } ::-webkit-scrollbar-track { background-color: transparent; } ::-webkit-scrollbar { width: 6px; } </style>
+  <style>body { background-color: rgba(255, 255, 255, 255.0); font-size: 19px !important; } body, p, blockquote, ul, ol, dl, table, pre, code, tr { color: rgba(8, 8, 8, 255.0); } a { color: rgba(36, 112, 179, 255.0); } table td, table th { border: 1px solid rgba(205, 205, 205, 255.0); } hr { background-color: rgba(205, 205, 205, 255.0); } kbd, tr { border: 1px solid rgba(205, 205, 205, 255.0); } h6 { color: rgba(153, 153, 153, 255.0); } blockquote { border-left: 2px solid rgba(36, 112, 179, 0.4); } ::-webkit-scrollbar-thumb { background-color: rgba(115, 115, 115, 0.2); } blockquote, code, pre { background-color: rgba(212, 222, 231, 0.24705882352941178); }</style>
+ </head> 
+ <body>
+  <div md-src-pos="0..14175">
+   <h1 md-src-pos="0..27">LIN6209 Week 6 Assignment</h1>
+   <p md-src-pos="29..137"><span md-src-pos="29..36">Design,</span> <span md-src-pos="37..75">build and test the following functions</span>:<br> <span md-src-pos="78..121">Submit your python script with the filename</span> '<span md-src-pos="123..135">w6_yourID.py</span>'<span md-src-pos="136..137">.</span></p>
+   <h2 md-src-pos="139..165">thermostat(temperature)</h2>
+   <p md-src-pos="167..383"><span md-src-pos="167..219">If the temperature is less that 19 turn the heat on,</span> <span md-src-pos="220..225">If it</span>'<span md-src-pos="226..259">s more than 24 turn the heat off.</span> <span md-src-pos="260..265">If it</span>'<span md-src-pos="266..267">s</span> <span md-src-pos="268..276">neither,</span> <span md-src-pos="277..309">leave the heat setting as it is.</span> <span md-src-pos="310..327">Return the string</span> <code md-src-pos="328..334">'on'</code><span md-src-pos="334..335">,</span> <code md-src-pos="336..343">'off'</code> <span md-src-pos="344..346">or</span> <code md-src-pos="347..355">'stat'</code> <span md-src-pos="356..369">respectively.</span><br> <span md-src-pos="371..382">For example</span>:</p>
+   <table md-src-pos="385..511">
+    <thead>
+     <tr md-src-pos="385..411">
+      <th align="center" md-src-pos="385..397">temperature</th>
+      <th align="center" md-src-pos="398..411">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="435..450">
+      <td align="center" md-src-pos="435..440"><code md-src-pos="435..439">21</code></td>
+      <td align="center" md-src-pos="441..450"><code md-src-pos="442..450">'stat'</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="451..464">
+      <td align="center" md-src-pos="451..456"><code md-src-pos="451..455">16</code></td>
+      <td align="center" md-src-pos="457..464"><code md-src-pos="458..464">'on'</code></td>
+     </tr>
+     <tr md-src-pos="465..479">
+      <td align="center" md-src-pos="465..470"><code md-src-pos="465..469">34</code></td>
+      <td align="center" md-src-pos="471..479"><code md-src-pos="472..479">'off'</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="480..495">
+      <td align="center" md-src-pos="480..485"><code md-src-pos="480..484">19</code></td>
+      <td align="center" md-src-pos="486..495"><code md-src-pos="487..495">'stat'</code></td>
+     </tr>
+     <tr md-src-pos="496..511">
+      <td align="center" md-src-pos="496..501"><code md-src-pos="496..500">24</code></td>
+      <td align="center" md-src-pos="502..511"><code md-src-pos="503..511">'stat'</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="513..609"><strong md-src-pos="513..523">Hints:</strong><br> <span md-src-pos="525..530">A few</span> <code md-src-pos="531..535">if</code> <span md-src-pos="536..565">statements with possibly some</span> <code md-src-pos="566..572">elif</code> <span md-src-pos="573..576">and</span> <code md-src-pos="577..583">else</code><span md-src-pos="583..584">,</span> <span md-src-pos="585..609">should get the job done.</span></p>
+   <h2 md-src-pos="611..637">score_2(dice_1, dice_2)</h2>
+   <p md-src-pos="639..819"><span md-src-pos="639..746">The parameters are guaranteed to be integers between 1 and 6 inclusive and represent the face values on the</span> <span md-src-pos="747..775">throw of two six-sided dice.</span> <span md-src-pos="776..818">Calculate the score according to this rule</span>:</p>
+   <ul md-src-pos="821..1113">
+    <li md-src-pos="821..856">The score is the sum of both dice</li>
+    <li md-src-pos="857..956">unless it is a 'double' (both dice the same) in which case add one of the dice to the score again</li>
+    <li md-src-pos="957..1047">unless it is 'double six' (both dice six) in which case add both dice to the score again</li>
+    <li md-src-pos="1048..1113">unless the sum of the two dice is seven in which case double it</li>
+   </ul>
+   <p md-src-pos="1115..1127"><span md-src-pos="1115..1126">For example</span>:</p>
+   <table md-src-pos="1129..1264">
+    <thead>
+     <tr md-src-pos="1129..1160">
+      <th align="center" md-src-pos="1129..1146">parameter values</th>
+      <th align="center" md-src-pos="1147..1160">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="1184..1196">
+      <td align="center" md-src-pos="1184..1191"><code md-src-pos="1184..1190">1, 5</code></td>
+      <td align="center" md-src-pos="1192..1196"><code md-src-pos="1193..1196">6</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="1197..1209">
+      <td align="center" md-src-pos="1197..1204"><code md-src-pos="1197..1203">5, 1</code></td>
+      <td align="center" md-src-pos="1205..1209"><code md-src-pos="1206..1209">6</code></td>
+     </tr>
+     <tr md-src-pos="1210..1223">
+      <td align="center" md-src-pos="1210..1217"><code md-src-pos="1210..1216">3, 4</code></td>
+      <td align="center" md-src-pos="1218..1223"><code md-src-pos="1219..1223">14</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="1224..1237">
+      <td align="center" md-src-pos="1224..1231"><code md-src-pos="1224..1230">5, 2</code></td>
+      <td align="center" md-src-pos="1232..1237"><code md-src-pos="1233..1237">14</code></td>
+     </tr>
+     <tr md-src-pos="1238..1250">
+      <td align="center" md-src-pos="1238..1245"><code md-src-pos="1238..1244">2, 2</code></td>
+      <td align="center" md-src-pos="1246..1250"><code md-src-pos="1247..1250">6</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="1251..1264">
+      <td align="center" md-src-pos="1251..1258"><code md-src-pos="1251..1257">6, 6</code></td>
+      <td align="center" md-src-pos="1259..1264"><code md-src-pos="1260..1264">24</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="1266..1362"><strong md-src-pos="1266..1276">Hints:</strong><br> <span md-src-pos="1278..1283">A few</span> <code md-src-pos="1284..1288">if</code> <span md-src-pos="1289..1318">statements with possibly some</span> <code md-src-pos="1319..1325">elif</code> <span md-src-pos="1326..1329">and</span> <code md-src-pos="1330..1336">else</code><span md-src-pos="1336..1337">,</span> <span md-src-pos="1338..1362">should get the job done.</span></p>
+   <h2 md-src-pos="1364..1400">score_4(red1, red2, blue1, blue2)</h2>
+   <p md-src-pos="1402..1624"><span md-src-pos="1402..1473">The parameters are guaranteed to be integers between 1 and 6 inclusive.</span> <span md-src-pos="1474..1507">They represent the face values on</span> <span md-src-pos="1508..1541">the throw of four six-sided dice,</span> <span md-src-pos="1542..1581">two coloured red and two coloured blue.</span> <span md-src-pos="1582..1614">Calculate the score according to</span> <span md-src-pos="1615..1623">the rule</span>:</p>
+   <ul md-src-pos="1626..2028">
+    <li md-src-pos="1626..1686">The score is the face value of the lowest of all four dice</li>
+    <li md-src-pos="1687..1776">Unless the sum of any one red dice and any one blue dice is seven in which case score 7</li>
+    <li md-src-pos="1777..1932">Unless the sum of any one red dice and any one blue dice is seven, and the sum of the remaining red and blue dice is also seven, in which case score 14</li>
+    <li md-src-pos="1933..2028">Unless the four dice are any permutation of (3,3,4,4), in which case score 21<br> For example:</li>
+   </ul>
+   <table md-src-pos="2030..2239">
+    <thead>
+     <tr md-src-pos="2030..2061">
+      <th align="center" md-src-pos="2030..2047">parameter values</th>
+      <th align="center" md-src-pos="2048..2061">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="2085..2103">
+      <td align="center" md-src-pos="2085..2098"><code md-src-pos="2085..2097">1, 5, 6, 6</code></td>
+      <td align="center" md-src-pos="2099..2103"><code md-src-pos="2100..2103">7</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="2104..2122">
+      <td align="center" md-src-pos="2104..2117"><code md-src-pos="2104..2116">3, 2, 3, 3</code></td>
+      <td align="center" md-src-pos="2118..2122"><code md-src-pos="2119..2122">2</code></td>
+     </tr>
+     <tr md-src-pos="2123..2142">
+      <td align="center" md-src-pos="2123..2136"><code md-src-pos="2123..2135">2, 6, 1, 5</code></td>
+      <td align="center" md-src-pos="2137..2142"><code md-src-pos="2138..2142">14</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="2143..2161">
+      <td align="center" md-src-pos="2143..2156"><code md-src-pos="2143..2155">1, 1, 2, 6</code></td>
+      <td align="center" md-src-pos="2157..2161"><code md-src-pos="2158..2161">7</code></td>
+     </tr>
+     <tr md-src-pos="2162..2180">
+      <td align="center" md-src-pos="2162..2175"><code md-src-pos="2162..2174">1, 2, 3, 4</code></td>
+      <td align="center" md-src-pos="2176..2180"><code md-src-pos="2177..2180">1</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="2181..2199">
+      <td align="center" md-src-pos="2181..2194"><code md-src-pos="2181..2193">3, 3, 3, 4</code></td>
+      <td align="center" md-src-pos="2195..2199"><code md-src-pos="2196..2199">7</code></td>
+     </tr>
+     <tr md-src-pos="2200..2219">
+      <td align="center" md-src-pos="2200..2213"><code md-src-pos="2200..2212">3, 3, 4, 4</code></td>
+      <td align="center" md-src-pos="2214..2219"><code md-src-pos="2215..2219">21</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="2220..2239">
+      <td align="center" md-src-pos="2220..2233"><code md-src-pos="2220..2232">4, 3, 3, 4</code></td>
+      <td align="center" md-src-pos="2234..2239"><code md-src-pos="2235..2239">21</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="2241..2346"><strong md-src-pos="2241..2251">Hints:</strong><br> <span md-src-pos="2253..2263">Same again</span>: <code md-src-pos="2265..2269">if</code><span md-src-pos="2269..2270">,</span> <code md-src-pos="2271..2277">elif</code> <span md-src-pos="2278..2281">and</span> <code md-src-pos="2282..2288">else</code><span md-src-pos="2288..2289">.</span> <span md-src-pos="2290..2346">Just be careful you cover all the options and test them.</span></p>
+   <h2 md-src-pos="2348..2367">fizzbuzz(an_int)</h2>
+   <p md-src-pos="2369..2635"><span md-src-pos="2369..2430">The parameter is guaranteed to be a positive integer or zero.</span> <span md-src-pos="2431..2433">If</span> <code md-src-pos="2434..2442">an_int</code> <span md-src-pos="2443..2468">is a multiple of 3 return</span> <code md-src-pos="2469..2477">'Fizz'</code> <span md-src-pos="2478..2479">,</span> <span md-src-pos="2480..2511">if it is a multiple of 5 return</span> <code md-src-pos="2512..2520">'Buzz'</code> <span md-src-pos="2521..2557">and if it is a multiple of 15 return</span> <code md-src-pos="2558..2570">'FizzBuzz'</code><span md-src-pos="2570..2571">.</span> <span md-src-pos="2572..2585">If it is none</span> <span md-src-pos="2586..2606">of those then return</span> <code md-src-pos="2607..2620">str(an_int)</code><span md-src-pos="2620..2621">.</span><br> <span md-src-pos="2623..2634">For example</span>:</p>
+   <table md-src-pos="2637..2769">
+    <thead>
+     <tr md-src-pos="2637..2667">
+      <th align="center" md-src-pos="2637..2653">parameter value</th>
+      <th align="center" md-src-pos="2654..2667">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="2691..2703">
+      <td align="center" md-src-pos="2691..2696"><code md-src-pos="2691..2694">1</code></td>
+      <td align="center" md-src-pos="2697..2703"><code md-src-pos="2698..2703">'1'</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="2704..2719">
+      <td align="center" md-src-pos="2704..2709"><code md-src-pos="2704..2707">5</code></td>
+      <td align="center" md-src-pos="2710..2719"><code md-src-pos="2711..2719">'Buzz'</code></td>
+     </tr>
+     <tr md-src-pos="2720..2735">
+      <td align="center" md-src-pos="2720..2725"><code md-src-pos="2720..2724">33</code></td>
+      <td align="center" md-src-pos="2726..2735"><code md-src-pos="2727..2735">'Fizz'</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="2736..2755">
+      <td align="center" md-src-pos="2736..2741"><code md-src-pos="2736..2740">45</code></td>
+      <td align="center" md-src-pos="2742..2755"><code md-src-pos="2743..2755">'FizzBuzz'</code></td>
+     </tr>
+     <tr md-src-pos="2756..2769">
+      <td align="center" md-src-pos="2756..2761"><code md-src-pos="2756..2760">13</code></td>
+      <td align="center" md-src-pos="2762..2769"><code md-src-pos="2763..2769">'13'</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="2771..2876"><strong md-src-pos="2771..2781">Hints:</strong><br> <span md-src-pos="2783..2793">Same again</span>: <code md-src-pos="2795..2799">if</code><span md-src-pos="2799..2800">,</span> <code md-src-pos="2801..2807">elif</code> <span md-src-pos="2808..2811">and</span> <code md-src-pos="2812..2818">else</code><span md-src-pos="2818..2819">.</span> <span md-src-pos="2820..2876">Just be careful you cover all the options and test them.</span></p>
+   <h2 md-src-pos="2878..2900">num_seq_str(an_int)</h2>
+   <p md-src-pos="2902..3166"><span md-src-pos="2902..2973">The parameter is guaranteed to be a positive integer greater than zero.</span> <span md-src-pos="2974..3004">Return a string containing the</span> <span md-src-pos="3005..3036">integers 1 to an_int inclusive.</span> <span md-src-pos="3037..3094">Successive integers are separated by a comma and a space.</span> <span md-src-pos="3095..3113">Note that there is</span> <span md-src-pos="3114..3166">no trailing comma or space at the end of the string.</span></p>
+   <table md-src-pos="3168..3272">
+    <thead>
+     <tr md-src-pos="3168..3198">
+      <th align="center" md-src-pos="3168..3184">parameter value</th>
+      <th align="center" md-src-pos="3185..3198">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="3222..3233">
+      <td align="center" md-src-pos="3222..3226"><code md-src-pos="3222..3225">1</code></td>
+      <td align="center" md-src-pos="3227..3233"><code md-src-pos="3228..3233">'1'</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="3234..3248">
+      <td align="center" md-src-pos="3234..3238"><code md-src-pos="3234..3237">2</code></td>
+      <td align="center" md-src-pos="3239..3248"><code md-src-pos="3240..3248">'1, 2'</code></td>
+     </tr>
+     <tr md-src-pos="3249..3272">
+      <td align="center" md-src-pos="3249..3253"><code md-src-pos="3249..3252">5</code></td>
+      <td align="center" md-src-pos="3254..3272"><code md-src-pos="3255..3272">'1, 2, 3, 4, 5'</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="3274..3456"><strong md-src-pos="3274..3284">Hints:</strong><br> <span md-src-pos="3286..3353">The first part of the problem is to generate the sequence from 1 to</span> <code md-src-pos="3354..3362">an_int</code> <span md-src-pos="3363..3373">inclusive.</span> <span md-src-pos="3374..3392">There many ways to</span> <span md-src-pos="3393..3442">do this but two of the most straightforward are a</span> <code md-src-pos="3443..3450">while</code> <span md-src-pos="3451..3455">loop</span>:</p>
+   <pre md-src-pos="3458..3646"><code class="language-python" md-src-pos="3458..3646"><span md-src-pos="3458..3468"></span><span md-src-pos="3468..3492"><span style="color: rgb(140, 140, 140);"># a template while loop</span></span>
+<span md-src-pos="3492..3542">an_int = <span style="color: rgb(23, 80, 235);">5</span>  <span style="color: rgb(140, 140, 140);"># this value will come from parameter</span></span>
+<span md-src-pos="3542..3552">count = <span style="color: rgb(23, 80, 235);">0</span></span>
+<span md-src-pos="3552..3618"><span style="color: rgb(0, 51, 179);">while</span> count &lt; an_int:  <span style="color: rgb(140, 140, 140);"># check this produces the correct sequence</span></span>
+<span md-src-pos="3618..3643">    print(count, an_int)</span>
+<span md-src-pos="3643..3644"></span><span md-src-pos="3643..3646"></span></code></pre>
+   <p md-src-pos="3648..3691"><span md-src-pos="3648..3662">Alternatively,</span> <span md-src-pos="3663..3664">a</span> <code md-src-pos="3665..3670">for</code> <span md-src-pos="3671..3681">loop using</span> <code md-src-pos="3682..3691">range()</code></p>
+   <pre md-src-pos="3693..3867"><code class="language-python" md-src-pos="3693..3867"><span md-src-pos="3693..3703"></span><span md-src-pos="3703..3725"><span style="color: rgb(140, 140, 140);"># a template for loop</span></span>
+<span md-src-pos="3725..3775">an_int = <span style="color: rgb(23, 80, 235);">5</span>  <span style="color: rgb(140, 140, 140);"># this value will come from parameter</span></span>
+<span md-src-pos="3775..3843"><span style="color: rgb(0, 51, 179);">for</span> i <span style="color: rgb(0, 51, 179);">in</span> range(an_int):  <span style="color: rgb(140, 140, 140);"># check this produces the correct sequence</span></span>
+<span md-src-pos="3843..3864">    print(i, an_int)</span>
+<span md-src-pos="3864..3865"></span><span md-src-pos="3864..3867"></span></code></pre>
+   <p md-src-pos="3869..4150"><span md-src-pos="3869..3897">Choose whichever you prefer,</span> <span md-src-pos="3898..3921">or even something else.</span> <span md-src-pos="3922..3968">Once you can generate the sequence of numbers,</span> <span md-src-pos="3969..3977">work out</span> <span md-src-pos="3978..4031">how to assemble the string this function must return.</span><br> <span md-src-pos="4033..4049">Two useful facts</span>: <span md-src-pos="4051..4091">you can turn anything into a string with</span> <code md-src-pos="4092..4107">str(anything)</code> <span md-src-pos="4108..4140">and you can add strings together</span> <span md-src-pos="4141..4145">with</span> <code md-src-pos="4146..4149">+</code><span md-src-pos="4149..4150">.</span></p>
+   <h2 md-src-pos="4152..4175">num_seq_list(an_int)</h2>
+   <p md-src-pos="4177..4309"><span md-src-pos="4177..4248">The parameter is guaranteed to be a positive integer greater than zero.</span> <span md-src-pos="4249..4277">Return a list containing the</span> <span md-src-pos="4278..4309">integers 1 to an_int inclusive.</span></p>
+   <table md-src-pos="4311..4460">
+    <thead>
+     <tr md-src-pos="4311..4341">
+      <th align="center" md-src-pos="4311..4327">parameter value</th>
+      <th align="center" md-src-pos="4328..4341">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="4365..4376">
+      <td align="center" md-src-pos="4365..4369"><code md-src-pos="4365..4368">1</code></td>
+      <td align="center" md-src-pos="4370..4376"><code md-src-pos="4371..4376">[1]</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="4377..4391">
+      <td align="center" md-src-pos="4377..4381"><code md-src-pos="4377..4380">2</code></td>
+      <td align="center" md-src-pos="4382..4391"><code md-src-pos="4383..4391">[1, 2]</code></td>
+     </tr>
+     <tr md-src-pos="4392..4415">
+      <td align="center" md-src-pos="4392..4396"><code md-src-pos="4392..4395">5</code></td>
+      <td align="center" md-src-pos="4397..4415"><code md-src-pos="4398..4415">[1, 2, 3, 4, 5]</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="4416..4460">
+      <td align="center" md-src-pos="4416..4421"><code md-src-pos="4416..4420">11</code></td>
+      <td align="center" md-src-pos="4422..4460"><code md-src-pos="4423..4460">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="4462..4737"><strong md-src-pos="4462..4472">Hints:</strong><br> <span md-src-pos="4474..4567">Same problem as the previous except this time you need to return a list rather than a string.</span><br> <span md-src-pos="4569..4627">Perhaps start by creating an empty list with the statement</span> <code md-src-pos="4628..4632">[]</code> <span md-src-pos="4633..4665">and append items to the end with</span> <span md-src-pos="4666..4669">the</span> <code md-src-pos="4670..4685">list.append()</code><span md-src-pos="4685..4686">.</span><br> <span md-src-pos="4688..4737">There are many other ways to write this function.</span></p>
+   <h2 md-src-pos="4739..4761">num_seq_set(an_int)</h2>
+   <p md-src-pos="4763..4898"><span md-src-pos="4763..4834">The parameter is guaranteed to be a positive integer greater than zero.</span> <span md-src-pos="4835..4871">Return a set containing the integers</span> <span md-src-pos="4872..4884">1 to an_int.</span><br> <span md-src-pos="4886..4897">For example</span>:</p>
+   <table md-src-pos="4900..5004">
+    <thead>
+     <tr md-src-pos="4900..4930">
+      <th align="center" md-src-pos="4900..4916">parameter value</th>
+      <th align="center" md-src-pos="4917..4930">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="4954..4965">
+      <td align="center" md-src-pos="4954..4958"><code md-src-pos="4954..4957">1</code></td>
+      <td align="center" md-src-pos="4959..4965"><code md-src-pos="4960..4965">{1}</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="4966..4980">
+      <td align="center" md-src-pos="4966..4970"><code md-src-pos="4966..4969">2</code></td>
+      <td align="center" md-src-pos="4971..4980"><code md-src-pos="4972..4980">{1' 2}</code></td>
+     </tr>
+     <tr md-src-pos="4981..5004">
+      <td align="center" md-src-pos="4981..4985"><code md-src-pos="4981..4984">5</code></td>
+      <td align="center" md-src-pos="4986..5004"><code md-src-pos="4987..5004">{1, 2, 3, 4, 5}</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="5006..5102"><strong md-src-pos="5006..5016">Hints:</strong><br> <span md-src-pos="5018..5093">Same problem as the previous function except this time you need to return a</span> <code md-src-pos="5094..5101">set()</code><span md-src-pos="5101..5102">.</span></p>
+   <h2 md-src-pos="5104..5128">num_seq_dict_(an_int)</h2>
+   <p md-src-pos="5130..5385"><span md-src-pos="5130..5201">The parameter is guaranteed to be a positive integer greater than zero.</span> <span md-src-pos="5202..5236">Return a dictionary containing the</span> <span md-src-pos="5237..5288">integers 1 to an_int as the keys of the dictionary.</span> <span md-src-pos="5289..5344">The value associated with each key should be the string</span> <span md-src-pos="5345..5365">returned by fizzbuzz</span>(<span md-src-pos="5366..5369">key</span>)<span md-src-pos="5370..5371">.</span><br> <span md-src-pos="5373..5384">For example</span>:</p>
+   <table md-src-pos="5387..5573">
+    <thead>
+     <tr md-src-pos="5387..5417">
+      <th align="center" md-src-pos="5387..5403">parameter value</th>
+      <th align="center" md-src-pos="5404..5417">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="5441..5457">
+      <td align="center" md-src-pos="5441..5445"><code md-src-pos="5441..5444">1</code></td>
+      <td align="center" md-src-pos="5446..5457"><code md-src-pos="5447..5457">{1: '1'}</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="5458..5482">
+      <td align="center" md-src-pos="5458..5462"><code md-src-pos="5458..5461">2</code></td>
+      <td align="center" md-src-pos="5463..5482"><code md-src-pos="5464..5482">{1: '1', 2: '2'}</code></td>
+     </tr>
+     <tr md-src-pos="5483..5518">
+      <td align="center" md-src-pos="5483..5487"><code md-src-pos="5483..5486">3</code></td>
+      <td align="center" md-src-pos="5488..5518"><code md-src-pos="5489..5518">{1: '1', 2: '2', 3: 'Fizz'}</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="5519..5573">
+      <td align="center" md-src-pos="5519..5523"><code md-src-pos="5519..5522">5</code></td>
+      <td align="center" md-src-pos="5524..5573"><code md-src-pos="5525..5573">{1: '1', 2: '2', 3: 'Fizz', 4: '4', 5: 'Buzz'}</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="5575..5808"><strong md-src-pos="5575..5585">Hints:</strong><br> <span md-src-pos="5587..5695">Same problem as the previous function except this time you need to return a dictionary rather than a string.</span> <span md-src-pos="5696..5773">This has the added complexity that every entry in a dictionary has two parts,</span> <span md-src-pos="5774..5775">a</span> '<span md-src-pos="5777..5780">key</span>' <span md-src-pos="5782..5799">and an associated</span> '<span md-src-pos="5801..5806">value</span>'<span md-src-pos="5807..5808">.</span></p>
+   <p md-src-pos="5810..6021"><span md-src-pos="5810..5918">One approach is to start by creating the dictionary with the correct keys but all with just a single default</span> <span md-src-pos="5919..5925">value.</span> <span md-src-pos="5926..5962">Then iterate through the dictionary,</span> <span md-src-pos="5963..5974">key-by-key,</span> <span md-src-pos="5975..5986">setting the</span> '<span md-src-pos="5988..5993">value</span>' <span md-src-pos="5995..6021">part to the correct value.</span></p>
+   <p md-src-pos="6023..6171"><span md-src-pos="6023..6071">You will find the dictionary methods you need in</span> <span md-src-pos="6072..6075">the</span> <a href="https://docs.python.org/3/library/stdtypes.html#typesmapping" md-src-pos="6076..6171">Python dictionary documentation</a></p>
+   <h2 md-src-pos="6173..6199">get_chars_set(filename)</h2>
+   <p md-src-pos="6201..6362"><span md-src-pos="6201..6276">The parameter is guaranteed to be the name of a text file encoded as utf-8.</span> <span md-src-pos="6277..6309">Read the file and return the set</span> <span md-src-pos="6310..6348">of all characters present in the file.</span><br> <span md-src-pos="6350..6361">For example</span>:</p>
+   <table md-src-pos="6364..6522">
+    <thead>
+     <tr md-src-pos="6364..6391">
+      <th align="center" md-src-pos="6364..6377">file content</th>
+      <th align="center" md-src-pos="6378..6391">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="6415..6426">
+      <td align="center" md-src-pos="6415..6420"><code md-src-pos="6415..6419">''</code></td>
+      <td align="center" md-src-pos="6421..6426"><code md-src-pos="6422..6426">{}</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="6427..6478">
+      <td align="center" md-src-pos="6427..6439"><code md-src-pos="6427..6438">'abc 123'</code></td>
+      <td align="center" md-src-pos="6440..6478"><code md-src-pos="6441..6478">{'a', 'b', 'c', '1', '2', ' ', '3'}</code></td>
+     </tr>
+     <tr md-src-pos="6479..6522">
+      <td align="center" md-src-pos="6479..6493"><code md-src-pos="6479..6492">'~abc+cab~'</code></td>
+      <td align="center" md-src-pos="6494..6522"><code md-src-pos="6495..6522">{'a', 'b', 'c', '~', '+'}</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="6524..6598"><strong md-src-pos="6524..6534">Hints:</strong><br> <span md-src-pos="6536..6598">Read the file into a single string then convert that to a set.</span></p>
+   <pre md-src-pos="6600..6839"><code class="language-python" md-src-pos="6600..6839"><span md-src-pos="6600..6610"></span><span md-src-pos="6610..6675">filename = <span style="color: rgb(6, 125, 23);">'the name of the file'</span>  <span style="color: rgb(140, 140, 140);"># this is the parameter value</span></span>
+<span md-src-pos="6675..6750"><span style="color: rgb(0, 51, 179);">with</span> open(filename, <span style="color: rgb(6, 125, 23);">'r'</span>, encoding=<span style="color: rgb(6, 125, 23);">'utf-8'</span>) <span style="color: rgb(0, 51, 179);">as</span> f:  <span style="color: rgb(140, 140, 140);"># open the file for read</span></span>
+<span md-src-pos="6750..6790">    content = f.read()  <span style="color: rgb(140, 140, 140);"># read the file</span></span>
+<span md-src-pos="6790..6836">    print(content)  <span style="color: rgb(140, 140, 140);"># your code replaces this</span></span>
+<span md-src-pos="6836..6837"></span><span md-src-pos="6836..6839"></span></code></pre>
+   <h2 md-src-pos="6841..6865">count_chars(filename)</h2>
+   <p md-src-pos="6867..7104"><span md-src-pos="6867..6942">The parameter is guaranteed to be the name of a text file encoded as utf-8.</span> <span md-src-pos="6943..6974">Read the file and return number</span> <span md-src-pos="6975..7001">of characters in the file.</span> <span md-src-pos="7002..7059">There is no need to be concerned as to what constitutes a</span> '<span md-src-pos="7061..7070">character</span>'<span md-src-pos="7071..7072">.</span> <span md-src-pos="7073..7078">Count</span> <span md-src-pos="7079..7090">everything.</span><br> <span md-src-pos="7092..7103">For example</span>:</p>
+   <table md-src-pos="7106..7205">
+    <thead>
+     <tr md-src-pos="7106..7133">
+      <th align="center" md-src-pos="7106..7119">file content</th>
+      <th align="center" md-src-pos="7120..7133">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="7157..7167">
+      <td align="center" md-src-pos="7157..7162"><code md-src-pos="7157..7161">''</code></td>
+      <td align="center" md-src-pos="7163..7167"><code md-src-pos="7164..7167">0</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="7168..7185">
+      <td align="center" md-src-pos="7168..7180"><code md-src-pos="7168..7179">'abc 123'</code></td>
+      <td align="center" md-src-pos="7181..7185"><code md-src-pos="7182..7185">7</code></td>
+     </tr>
+     <tr md-src-pos="7186..7205">
+      <td align="center" md-src-pos="7186..7200"><code md-src-pos="7186..7199">'-abc-123-'</code></td>
+      <td align="center" md-src-pos="7201..7205"><code md-src-pos="7202..7205">9</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="7207..7300"><strong md-src-pos="7207..7217">Hints:</strong><br> <span md-src-pos="7219..7252">Similar to the previous function.</span> <span md-src-pos="7253..7300">Read the file and count the characters in that.</span></p>
+   <h2 md-src-pos="7302..7323">count_Q(filename);</h2>
+   <p md-src-pos="7325..7528"><span md-src-pos="7325..7400">The parameter is guaranteed to be the name of a text file encoded as utf-8.</span> <span md-src-pos="7401..7428">Read the file and count the</span> <span md-src-pos="7429..7467">number of occurrences of the character</span> '<span md-src-pos="7469..7470">?</span>' (<span md-src-pos="7473..7489">a question mark,</span> <span md-src-pos="7490..7526">unicode 63 decimal or 3F hexadecimal</span>)<span md-src-pos="7527..7528">.</span></p>
+   <table md-src-pos="7530..7629">
+    <thead>
+     <tr md-src-pos="7530..7557">
+      <th align="center" md-src-pos="7530..7543">file content</th>
+      <th align="center" md-src-pos="7544..7557">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="7581..7597">
+      <td align="center" md-src-pos="7581..7592"><code md-src-pos="7581..7591">question</code></td>
+      <td align="center" md-src-pos="7593..7597"><code md-src-pos="7594..7597">0</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="7598..7609">
+      <td align="center" md-src-pos="7598..7604"><code md-src-pos="7598..7603">?-?</code></td>
+      <td align="center" md-src-pos="7605..7609"><code md-src-pos="7606..7609">2</code></td>
+     </tr>
+     <tr md-src-pos="7610..7629">
+      <td align="center" md-src-pos="7610..7624"><code md-src-pos="7610..7623">any???thing</code></td>
+      <td align="center" md-src-pos="7625..7629"><code md-src-pos="7626..7629">3</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="7631..7907"><strong md-src-pos="7631..7641">Hints:</strong><br> <span md-src-pos="7643..7663">Open the file with a</span> <code md-src-pos="7664..7678">with open():</code> <span md-src-pos="7679..7727">statement making sure to specify the encoding as</span> <code md-src-pos="7728..7746">encoding='utf-8'</code><span md-src-pos="7746..7747">.</span> <span md-src-pos="7748..7795">Read the whole file into a text string and then</span> <span md-src-pos="7796..7799">use</span> <a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str" md-src-pos="7800..7888">string methods</a> <span md-src-pos="7889..7899">to get the</span> <span md-src-pos="7900..7907">counts.</span></p>
+   <h2 md-src-pos="7909..7931">count_and(filename)</h2>
+   <p md-src-pos="7933..8315"><span md-src-pos="7933..8008">The parameter is guaranteed to be the name of a text file encoded as utf-8.</span> <span md-src-pos="8009..8036">Read the file and count the</span> <span md-src-pos="8037..8091">number of occurrences of each of the character strings</span> <code md-src-pos="8092..8099">'and'</code><span md-src-pos="8099..8100">,</span> <code md-src-pos="8101..8110">' and '</code><span md-src-pos="8110..8111">,</span> <span md-src-pos="8112..8115">and</span> <code md-src-pos="8116..8126">' and, '</code>(<span md-src-pos="8127..8137">the string</span> '<span md-src-pos="8139..8142">and</span>'<span md-src-pos="8143..8144">;</span> <span md-src-pos="8145..8177">same but with spaces both sides;</span> <span md-src-pos="8178..8242">same again but with a space before and a comma and a space after</span>)<span md-src-pos="8243..8244">.</span> <span md-src-pos="8245..8251">Ignore</span> <span md-src-pos="8252..8273">the case of the text.</span> <span md-src-pos="8274..8315">Return the respective counts as integers.</span></p>
+   <table md-src-pos="8317..8449">
+    <thead>
+     <tr md-src-pos="8317..8344">
+      <th align="center" md-src-pos="8317..8330">file content</th>
+      <th align="center" md-src-pos="8331..8344">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="8368..8384">
+      <td align="center" md-src-pos="8368..8373"><code md-src-pos="8368..8372">''</code></td>
+      <td align="center" md-src-pos="8374..8384"><code md-src-pos="8375..8384">0, 0, 0</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="8385..8414">
+      <td align="center" md-src-pos="8385..8403"><code md-src-pos="8385..8402">'and and and, '</code></td>
+      <td align="center" md-src-pos="8404..8414"><code md-src-pos="8405..8414">3, 1, 1</code></td>
+     </tr>
+     <tr md-src-pos="8415..8449">
+      <td align="center" md-src-pos="8415..8438"><code md-src-pos="8415..8437">'Andover and shandy'</code></td>
+      <td align="center" md-src-pos="8439..8449"><code md-src-pos="8440..8449">3, 1, 0</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="8451..8620"><strong md-src-pos="8451..8461">Hints:</strong><br> <span md-src-pos="8463..8487">Much the same as count_Q</span>()<span md-src-pos="8489..8490">.</span> <span md-src-pos="8491..8571">To return more than one value at the same time just separate them with commas in</span> <span md-src-pos="8572..8602">the return statement like this</span>: <code md-src-pos="8604..8620">return a,b,c,d</code></p>
+   <h2 md-src-pos="8622..8646">count_words(filename)</h2>
+   <p md-src-pos="8648..8791"><span md-src-pos="8648..8723">The parameter is guaranteed to be the name of a text file encoded as utf-8.</span> <span md-src-pos="8724..8755">Read the file and return number</span> <span md-src-pos="8756..8777">of words in the file.</span><br> <span md-src-pos="8779..8790">For example</span>:</p>
+   <table md-src-pos="8793..8903">
+    <thead>
+     <tr md-src-pos="8793..8820">
+      <th align="center" md-src-pos="8793..8806">file content</th>
+      <th align="center" md-src-pos="8807..8820">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="8844..8854">
+      <td align="center" md-src-pos="8844..8849"><code md-src-pos="8844..8848">''</code></td>
+      <td align="center" md-src-pos="8850..8854"><code md-src-pos="8851..8854">0</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="8855..8872">
+      <td align="center" md-src-pos="8855..8867"><code md-src-pos="8855..8866">'abc 123'</code></td>
+      <td align="center" md-src-pos="8868..8872"><code md-src-pos="8869..8872">2</code></td>
+     </tr>
+     <tr md-src-pos="8873..8903">
+      <td align="center" md-src-pos="8873..8898"><code md-src-pos="8873..8897">'abc 123 \n\t xyz'</code></td>
+      <td align="center" md-src-pos="8899..8903"><code md-src-pos="8900..8903">3</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="8905..9263"><strong md-src-pos="8905..8915">Hints:</strong><br> <span md-src-pos="8917..9001">Do not make the assumption that words are separated only by spaces as other types of</span> '<span md-src-pos="9003..9013">whitespace</span>' <span md-src-pos="9015..9025">characters</span> <span md-src-pos="9026..9059">are often used to separate words.</span> <span md-src-pos="9060..9071">These other</span> '<span md-src-pos="9073..9083">whitespace</span>' <span md-src-pos="9085..9103">characters include</span>: <span md-src-pos="9105..9108">tab</span> <code md-src-pos="9109..9115">'\t'</code><span md-src-pos="9115..9116">,</span> <span md-src-pos="9117..9124">newline</span> <code md-src-pos="9125..9131">'\n'</code><span md-src-pos="9131..9132">,</span> <span md-src-pos="9133..9148">carriage return</span> <code md-src-pos="9149..9156">'\cr'</code><span md-src-pos="9156..9157">,</span> <span md-src-pos="9158..9167">and more.</span><br> <span md-src-pos="9169..9243">There is a ready-made string method that identifies whitespace characters,</span> <span md-src-pos="9244..9263">find it and use it.</span></p>
+   <h2 md-src-pos="9265..9292">char_frequency(filename)</h2>
+   <p md-src-pos="9294..9422"><span md-src-pos="9294..9395">Return a dictionary with every character in filename as a key with a value equal to the number of its</span> <span md-src-pos="9396..9422">occurrences with filename.</span></p>
+   <p md-src-pos="9424..9504"><strong md-src-pos="9424..9434">Hints:</strong><br> <span md-src-pos="9436..9479">Use the same reasoning as for your function</span> <code md-src-pos="9480..9503">count_chars(filename)</code><span md-src-pos="9503..9504">.</span></p>
+   <h2 md-src-pos="9506..9533">word_frequency(filename)</h2>
+   <p md-src-pos="9535..9661"><span md-src-pos="9535..9634">Return a dictionary with every word in filename as a key and the associated value the number of its</span> <span md-src-pos="9635..9661">occurrences with filename.</span></p>
+   <p md-src-pos="9663..9757"><strong md-src-pos="9663..9673">Hints:</strong><br> <span md-src-pos="9675..9692">Use your function</span> <code md-src-pos="9693..9716">count_words(filename)</code> <span md-src-pos="9717..9757">for each word you put in the dictionary.</span></p>
+   <h2 md-src-pos="9760..9789">text_analysis_01(filename)</h2>
+   <p md-src-pos="9791..9911"><span md-src-pos="9791..9866">The parameter is guaranteed to be the name of a text file encoded as utf-8.</span> <span md-src-pos="9867..9899">Read the file and return a tuple</span> <span md-src-pos="9900..9910">containing</span>:</p>
+   <ul md-src-pos="9913..10048">
+    <li md-src-pos="9913..9940">Total number of sentences</li>
+    <li md-src-pos="9941..9964">Total number of words</li>
+    <li md-src-pos="9965..10008">Total number of non-whitespace characters</li>
+    <li md-src-pos="10009..10048">Total number of whitespace characters</li>
+   </ul>
+   <p md-src-pos="10050..10062"><span md-src-pos="10050..10061">Assume that</span>:</p>
+   <ul md-src-pos="10064..10399">
+    <li md-src-pos="10064..10278">All sentences are terminated by a period (full stop) or '!' or '?' followed by a space except for the last sentence in the file which might be terminated by the end of the file or just a '.' or '!' or '?' mark.</li>
+    <li md-src-pos="10279..10399">The file contents are entirely prose-like text. There are no tables, diagrams or any other complexities of any kind.</li>
+   </ul>
+   <p md-src-pos="10401..10494"><strong md-src-pos="10401..10411">Hints:</strong><br> <span md-src-pos="10413..10494">This is just an extension of the counting characters and counting words problems.</span></p>
+   <h2 md-src-pos="10496..10524">write_Q(an_int, filename)</h2>
+   <p md-src-pos="10526..10897"><span md-src-pos="10526..10580">The parameters are guaranteed to be a positive integer</span> <strong md-src-pos="10581..10602">greater than zero</strong> <span md-src-pos="10603..10624">and a legal filename.</span> <span md-src-pos="10625..10634">Write the</span> <span md-src-pos="10635..10698">sequence of integers from 1 to an_int inclusive to a text file,</span> <span md-src-pos="10699..10743">with each integer separated from the next by</span> <span md-src-pos="10744..10754">the string</span> ' <span md-src-pos="10757..10758">?</span> ' (<span md-src-pos="10762..10768">space,</span> <span md-src-pos="10769..10783">question mark,</span> <span md-src-pos="10784..10789">space</span>)<span md-src-pos="10790..10791">.</span> <span md-src-pos="10792..10851">The return value should be the count of the total number of</span> <span md-src-pos="10852..10883">characters written to the file.</span><br> <span md-src-pos="10885..10896">For example</span>:</p>
+   <table md-src-pos="10899..11080">
+    <thead>
+     <tr md-src-pos="10899..10945">
+      <th align="center" md-src-pos="10899..10916">parameter values</th>
+      <th align="center" md-src-pos="10917..10931">file content</th>
+      <th align="center" md-src-pos="10932..10945">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="10975..11001">
+      <td align="center" md-src-pos="10975..10991"><code md-src-pos="10975..10990">1, 'file.txt'</code></td>
+      <td align="center" md-src-pos="10992..10996"><code md-src-pos="10993..10996">1</code></td>
+      <td align="center" md-src-pos="10997..11001"><code md-src-pos="10998..11001">1</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="11002..11036">
+      <td align="center" md-src-pos="11002..11018"><code md-src-pos="11002..11017">3, 'file.txt'</code></td>
+      <td align="center" md-src-pos="11019..11031"><code md-src-pos="11020..11031">1 ? 2 ? 3</code></td>
+      <td align="center" md-src-pos="11032..11036"><code md-src-pos="11033..11036">9</code></td>
+     </tr>
+     <tr md-src-pos="11037..11080">
+      <td align="center" md-src-pos="11037..11053"><code md-src-pos="11037..11052">5, 'file.txt'</code></td>
+      <td align="center" md-src-pos="11054..11074"><code md-src-pos="11055..11074">1 ? 2 ? 3 ? 4 ? 5</code></td>
+      <td align="center" md-src-pos="11075..11080"><code md-src-pos="11076..11080">17</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="11082..11297"><strong md-src-pos="11082..11092">Hints:</strong><br> <span md-src-pos="11094..11095">A</span> <code md-src-pos="11096..11101">for</code> <span md-src-pos="11102..11104">or</span> <code md-src-pos="11105..11112">while</code> <span md-src-pos="11113..11155">loop to generate the sequence of integers,</span> <span md-src-pos="11156..11167">and add the</span> '<span md-src-pos="11169..11182">space-?-space</span>' <span md-src-pos="11184..11200">while iterating.</span><br> <span md-src-pos="11202..11216">Alternatively,</span> <span md-src-pos="11217..11296">re-use you function num_seq_str and replace the comma-space with space-?-space.</span></p>
+   <h2 md-src-pos="11299..11330">write_ints(an_int, filename)</h2>
+   <p md-src-pos="11332..11420"><span md-src-pos="11332..11386">The parameters are guaranteed to be a positive integer</span> <strong md-src-pos="11387..11398">or zero</strong> <span md-src-pos="11399..11420">and a legal filename.</span></p>
+   <p md-src-pos="11422..11874"><span md-src-pos="11422..11476">Create the file if it does not already exist and write</span> <code md-src-pos="11477..11485">an_int</code> <span md-src-pos="11486..11504">lines to the file.</span><br> <span md-src-pos="11506..11558">The successive lines of the file each start with the</span> <code md-src-pos="11559..11573">next integer</code> <span md-src-pos="11574..11606">in the ascending sequence from 1</span> <span md-src-pos="11607..11609">to</span> <code md-src-pos="11610..11618">an_int</code> <span md-src-pos="11619..11667">followed by the sequence of integer multiples of</span> <code md-src-pos="11668..11682">next_integer</code> <span md-src-pos="11683..11692">up to and</span> <span md-src-pos="11693..11702">including</span> <code md-src-pos="11703..11732">next_integer * next_integer</code><span md-src-pos="11732..11733">.</span><br> <span md-src-pos="11735..11801">All the integers in the same line are separated by a single space.</span> <span md-src-pos="11802..11843">No space is added at the beginning or the</span> <span md-src-pos="11844..11860">end of the line.</span><br> <span md-src-pos="11862..11873">For example</span>:</p>
+   <table md-src-pos="11876..12039">
+    <thead>
+     <tr md-src-pos="11876..11906">
+      <th align="center" md-src-pos="11876..11892">parameter value</th>
+      <th align="center" md-src-pos="11893..11906">file content</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="11930..11941">
+      <td align="center" md-src-pos="11930..11934"><code md-src-pos="11930..11933">0</code></td>
+      <td align="center" md-src-pos="11935..11941">empty</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="11942..11951">
+      <td align="center" md-src-pos="11942..11946"><code md-src-pos="11942..11945">1</code></td>
+      <td align="center" md-src-pos="11947..11951"><code md-src-pos="11948..11951">1</code></td>
+     </tr>
+     <tr md-src-pos="11952..11971">
+      <td align="center" md-src-pos="11952..11956"><code md-src-pos="11952..11955">2</code></td>
+      <td align="center" md-src-pos="11957..11971"><code md-src-pos="11958..11961">1</code><br><code md-src-pos="11966..11971">2 4</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="11972..12039">
+      <td align="center" md-src-pos="11972..11976"><code md-src-pos="11972..11975">5</code></td>
+      <td align="center" md-src-pos="11977..12039"><code md-src-pos="11978..11981">1</code><br><code md-src-pos="11986..11991">2 4</code><br><code md-src-pos="11996..12003">3 6 9</code><br><code md-src-pos="12008..12019">4 6 12 16</code><br><code md-src-pos="12024..12039">5 10 15 20 25</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="12041..12312"><strong md-src-pos="12041..12051">Hints:</strong><br> <span md-src-pos="12053..12090">This feels like a loop within a loop.</span><br> <span md-src-pos="12092..12093">A</span> <code md-src-pos="12094..12099">for</code> <span md-src-pos="12100..12102">or</span> <code md-src-pos="12103..12110">while</code> <span md-src-pos="12111..12162">loop to generate the sequence of integers from 1 to</span> <code md-src-pos="12163..12171">an_int</code><span md-src-pos="12171..12172">,</span> <span md-src-pos="12173..12189">and then another</span> <code md-src-pos="12190..12195">for</code> <span md-src-pos="12196..12198">or</span> <code md-src-pos="12199..12206">while</code> <span md-src-pos="12207..12263">loop within that to generate the ascending sequence from</span> <code md-src-pos="12264..12278">next_integer</code> <span md-src-pos="12279..12281">to</span> <code md-src-pos="12282..12311">next_integer * next_integer</code><span md-src-pos="12311..12312">.</span></p>
+   <h1 md-src-pos="12314..12340">Section 2 - Extra Credit</h1>
+   <p md-src-pos="12342..12550"><span md-src-pos="12342..12417">These last questions are more difficult and are not part of the assignment.</span><br> <span md-src-pos="12419..12465">If you attempt them I will mark your work and,</span> <span md-src-pos="12466..12524">providing you have completed section 1 to a good standard,</span> <span md-src-pos="12525..12526">I</span> <span md-src-pos="12527..12550">will award extra credit</span></p>
+   <h2 md-src-pos="12552..12574">adjacency(filename)</h2>
+   <p md-src-pos="12576..12762"><span md-src-pos="12576..12651">The parameter is guaranteed to be the name of a text file encoded as utf-8.</span> <span md-src-pos="12652..12678">Read the file and return a</span> <span md-src-pos="12679..12721">dictionary containing every word as a key.</span><br> <span md-src-pos="12723..12761">Associated with each key are two lists</span>:</p>
+   <ul md-src-pos="12764..12924">
+    <li md-src-pos="12764..12844">The words that have occurred immediately <strong md-src-pos="12807..12817">before</strong> the key word in <code md-src-pos="12834..12844">filename</code></li>
+    <li md-src-pos="12845..12924">The words that have occurred immediately <strong md-src-pos="12888..12897">after</strong> the key word in <code md-src-pos="12914..12924">filename</code></li>
+   </ul>
+   <h2 md-src-pos="12926..12957">predict_next(word, filename)</h2>
+   <p md-src-pos="12959..13295"><span md-src-pos="12959..13020">The parameter word is a string with no punctuation or spaces.</span> <span md-src-pos="13021..13024">The</span> <code md-src-pos="13025..13035">filename</code> <span md-src-pos="13036..13067">is guaranteed to be the name of</span> <span md-src-pos="13068..13097">a text file encoded as utf-8.</span> <span md-src-pos="13098..13124">Read the file and provided</span> <code md-src-pos="13125..13131">word</code> <span md-src-pos="13132..13149">occurs within it,</span> <span md-src-pos="13150..13170">return the word most</span> <span md-src-pos="13171..13187">likely to follow</span> <code md-src-pos="13188..13194">word</code> <span md-src-pos="13195..13231">based upon the corpus of text within</span> <code md-src-pos="13232..13242">filename</code><span md-src-pos="13242..13243">.</span> <span md-src-pos="13244..13246">If</span> <code md-src-pos="13247..13253">word</code> <span md-src-pos="13254..13271">is not present in</span> <span md-src-pos="13272..13287">filename return</span> <code md-src-pos="13288..13294">None</code><span md-src-pos="13294..13295">.</span></p>
+   <p md-src-pos="13297..13751"><span md-src-pos="13297..13353">In this simple case you could just read the next word in</span> <code md-src-pos="13354..13364">filename</code> <span md-src-pos="13365..13367">to</span> '<span md-src-pos="13369..13376">predict</span>' <span md-src-pos="13378..13390">it with 100%</span> <span md-src-pos="13391..13400">accuracy.</span> <span md-src-pos="13401..13404">The</span> <span md-src-pos="13405..13466">purpose of this exercise is of course more general than that.</span> <span md-src-pos="13467..13479">Imagine that</span> <code md-src-pos="13480..13490">filename</code> <span md-src-pos="13491..13513">is a collection of all</span> <span md-src-pos="13514..13555">the known writings of Arthur Conan Doyle.</span> <span md-src-pos="13556..13621">If we are presented with a new fragment of text purported to have</span> <span md-src-pos="13622..13724">been written by ACD we could use this function to gain a primitive measure of how likely it is that it</span> <span md-src-pos="13725..13751">really was written by ACD.</span></p>
+   <h2 md-src-pos="13753..13773">pluralizer(a_str)</h2>
+   <p md-src-pos="13775..13848"><span md-src-pos="13775..13816">The parameter is guaranteed to be a word.</span> <span md-src-pos="13817..13848">Return the plural of that word.</span></p>
+   <p md-src-pos="13850..13953"><strong md-src-pos="13850..13864">Test Data:</strong> <span md-src-pos="13865..13872">Banana,</span> <span md-src-pos="13873..13878">Leaf,</span> <span md-src-pos="13879..13887">Trolley,</span> <span md-src-pos="13888..13894">Lorry,</span> <span md-src-pos="13895..13901">Sheep,</span> <span md-src-pos="13902..13909">Church,</span> <span md-src-pos="13910..13918">Sausage,</span> <span md-src-pos="13919..13926">Monkey,</span> <span md-src-pos="13927..13933">Knife,</span> <span md-src-pos="13934..13940">Child,</span> <span md-src-pos="13941..13947">Match,</span> <span md-src-pos="13948..13953">Poppy</span></p>
+   <p md-src-pos="13955..14174"><strong md-src-pos="13955..13965">Hints:</strong> <span md-src-pos="13966..14062">Given the variability and irregular structure of natural language there is no perfect version of</span> <span md-src-pos="14063..14168">this function and a balance needs to be struck between coverage and the ever-increasing complexity of the</span> <span md-src-pos="14169..14174">code.</span></p>
+  </div>
+ </body>
+</html>

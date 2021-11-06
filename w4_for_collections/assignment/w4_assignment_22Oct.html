@@ -1,0 +1,458 @@
+<!doctype html>
+<html>
+ <head>            
+  <style>/* Reworked by IntelliJ Team The MIT License (MIT) Copyright (c) JetBrains Adapted from https://github.com/sindresorhus/github-markdown-css The MIT License (MIT) Copyright (c) Sindre Sorhus &lt;sindresorhus@gmail.com&gt; (sindresorhus.com) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ @font-face { font-family: octicons-anchor; src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff'); } body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, freesans, sans-serif; font-size: 14px; line-height: 1.6; word-wrap: break-word; margin: 0 30px; } strong { font-weight: bold; } img { border: 0; } input { color: inherit; font: inherit; margin: 0; line-height: normal; } html input[disabled] { cursor: default; } input[type="checkbox"] { box-sizing: border-box; padding: 0; } body * { box-sizing: border-box; } input { font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; } a { text-decoration: none; } a:hover, a:active { text-decoration: underline; } hr { height: 1px; padding: 0; margin: 20px 0; border: 0 none; } hr:before { display: table; content: ""; } hr:after { display: table; clear: both; content: ""; } blockquote { margin: 0; } ul, ol { padding: 0; margin-top: 0; margin-bottom: 0; } ol ol, ul ol { list-style-type: lower-roman; } ul ul ol, ul ol ol, ol ul ol, ol ol ol { list-style-type: lower-alpha; } dd { margin-left: 0; } .octicon { font: normal normal normal 16px/1 octicons-anchor; display: inline-block; text-decoration: none; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .octicon-link:before { content: '\f05c'; } .markdown-body &gt; *:first-child { margin-top: 0 !important; } .markdown-body &gt; *:last-child { margin-bottom: 0 !important; } .anchor { position: absolute; top: 0; left: 0; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; } .anchor:focus { outline: none; } h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; } h1 .octicon-link, h2 .octicon-link, h3 .octicon-link, h4 .octicon-link, h5 .octicon-link, h6 .octicon-link { display: none; color: #000; vertical-align: middle; } h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; } h1:hover .anchor .octicon-link, h2:hover .anchor .octicon-link, h3:hover .anchor .octicon-link, h4:hover .anchor .octicon-link, h5:hover .anchor .octicon-link, h6:hover .anchor .octicon-link { display: inline-block; } h1 { font-size: 2.2em; padding-top: 0.6em; } h1 .anchor { line-height: 1; } h2 { font-size: 1.8em; line-height: 1.2; padding-top: 0.6em; } h2 .anchor { line-height: 1.2; } h3 { font-size: 1.3em; line-height: 1; padding-top: 0.6em; } h3 .anchor { line-height: 1.2; } h4 { font-size: 1em; } h4 .anchor { line-height: 1.2; } h5 { font-size: 1em; } h5 .anchor { line-height: 1.1; } h6 { font-size: 1em; } h6 .anchor { line-height: 1.1; } p, blockquote, ul, ol, dl, table, pre { margin-top: 16px; margin-bottom: 16px; } ul, ol { padding-left: 2em; } ul ul, ul ol, ol ol, ol ul { margin-top: 0; margin-bottom: 0; } li &gt; p { margin-top: 0; margin-bottom: 0; } dl { padding: 0; } dl dt { padding: 0; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; } dl dd { padding: 0 16px; margin-bottom: 16px; } blockquote { padding: 10px 10px 10px 16px; border-left: 2px solid; border-radius: 0 3px 3px 0; } blockquote &gt; :first-child { margin-top: 0; } blockquote &gt; :last-child { margin-bottom: 0; } table { display: block; width: 100%; overflow: auto; word-break: normal; border-collapse: collapse; border-spacing: 0; font-size: 1em; } table th { font-weight: bold; } table th, table td { padding: 6px 13px; background: transparent; } table tr { border-top: 1px solid; } img { max-width: 100%; box-sizing: border-box; } code { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } pre &gt; code { padding: 0; margin: 0; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0; } .highlight { margin-bottom: 16px; } .highlight pre, pre { font: 0.85em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 16px; overflow: auto; line-height: 1.45; border-radius: 3px; } pre code { display: inline; max-width: initial; padding: 0; margin: 0; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0; } pre code:before, pre code:after { content: normal; } kbd { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } .task-list-item { list-style-type: none; } .task-list-item + .task-list-item { margin-top: 3px; } .task-list-item input { margin: 0 0.35em 0.25em -0.6em; vertical-align: middle; } :checked + .radio-label { z-index: 1; position: relative; } span.user-del { text-decoration: line-through; } ::-webkit-scrollbar { width: 6px; height: 6px; } ::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; } ::-webkit-scrollbar-track:vertical { -webkit-box-shadow: -1px 0 0 #ededed; } ::-webkit-scrollbar-track { background-color: transparent; } ::-webkit-scrollbar { width: 6px; } </style>
+  <style>body { background-color: rgba(255, 255, 255, 255.0); font-size: 19px !important; } body, p, blockquote, ul, ol, dl, table, pre, code, tr { color: rgba(8, 8, 8, 255.0); } a { color: rgba(36, 112, 179, 255.0); } table td, table th { border: 1px solid rgba(205, 205, 205, 255.0); } hr { background-color: rgba(205, 205, 205, 255.0); } kbd, tr { border: 1px solid rgba(205, 205, 205, 255.0); } h6 { color: rgba(153, 153, 153, 255.0); } blockquote { border-left: 2px solid rgba(36, 112, 179, 0.4); } ::-webkit-scrollbar-thumb { background-color: rgba(115, 115, 115, 0.2); } blockquote, code, pre { background-color: rgba(212, 222, 231, 0.24705882352941178); }</style>
+ </head> 
+ <body>
+  <div md-src-pos="0..17885">
+   <h1 md-src-pos="0..19">Week 4 Assignment</h1>
+   <p md-src-pos="21..161"><span md-src-pos="21..28">Design,</span> <span md-src-pos="29..67">build and test the following functions</span>: <em md-src-pos="69..99">{updated 19+22 October 2021}</em><br> <span md-src-pos="101..144">Submit your python script with the filename</span> '<span md-src-pos="146..158">w4_yourID.py</span>'<span md-src-pos="159..161">.\</span></p>
+   <h2 md-src-pos="163..179">signum(a_num)</h2>
+   <p md-src-pos="181..315"><span md-src-pos="181..220">If a_num is greater than zero return 1.</span> <span md-src-pos="221..226">If it</span>'<span md-src-pos="227..269">s less than zero return integer minus one.</span> <span md-src-pos="270..280">Otherwise,</span> <span md-src-pos="281..287">return</span> <span md-src-pos="288..301">integer zero.</span><br> <span md-src-pos="303..314">For example</span>:</p>
+   <table md-src-pos="317..423">
+    <thead>
+     <tr md-src-pos="317..348">
+      <th align="center" md-src-pos="317..334">parameter values</th>
+      <th align="center" md-src-pos="335..348">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="372..382">
+      <td align="center" md-src-pos="372..377"><code md-src-pos="372..376">11</code></td>
+      <td align="center" md-src-pos="378..382"><code md-src-pos="379..382">1</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="383..399">
+      <td align="center" md-src-pos="383..394"><code md-src-pos="383..393">0.000702</code></td>
+      <td align="center" md-src-pos="395..399"><code md-src-pos="396..399">1</code></td>
+     </tr>
+     <tr md-src-pos="400..413">
+      <td align="center" md-src-pos="400..407"><code md-src-pos="400..406">-1/2</code></td>
+      <td align="center" md-src-pos="408..413"><code md-src-pos="409..413">-1</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="414..423">
+      <td align="center" md-src-pos="414..418"><code md-src-pos="414..417">0</code></td>
+      <td align="center" md-src-pos="419..423"><code md-src-pos="420..423">0</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="425..483"><strong md-src-pos="425..435">Hints:</strong><br> <span md-src-pos="437..442">A few</span> <code md-src-pos="443..447">if</code> <span md-src-pos="448..483">statements should get the job done.</span></p>
+   <h2 md-src-pos="485..506">middle(p1, p2, p3)</h2>
+   <p md-src-pos="508..654"><span md-src-pos="508..532">Return the middle value.</span><br> <span md-src-pos="534..615">All three parameters are guaranteed to be pairwise comparable using the operators</span> &lt;<span md-src-pos="617..618">,</span> &lt;<span md-src-pos="620..621">=</span> !<span md-src-pos="623..625">=,</span> <span md-src-pos="626..629">==,</span> &gt;<span md-src-pos="631..633">=,</span> <span md-src-pos="634..637">and</span> &gt;<span md-src-pos="639..640">.</span><br> <span md-src-pos="642..653">For example</span>:</p>
+   <table md-src-pos="656..809">
+    <thead>
+     <tr md-src-pos="656..687">
+      <th align="center" md-src-pos="656..673">parameter values</th>
+      <th align="center" md-src-pos="674..687">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="711..728">
+      <td align="center" md-src-pos="711..723"><code md-src-pos="711..722">1 , 2 , 3</code></td>
+      <td align="center" md-src-pos="724..728"><code md-src-pos="725..728">2</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="729..746">
+      <td align="center" md-src-pos="729..741"><code md-src-pos="729..740">2 , 3 , 1</code></td>
+      <td align="center" md-src-pos="742..746"><code md-src-pos="743..746">2</code></td>
+     </tr>
+     <tr md-src-pos="747..772">
+      <td align="center" md-src-pos="747..765"><code md-src-pos="747..764">'a' , 'x' , 'c'</code></td>
+      <td align="center" md-src-pos="766..772"><code md-src-pos="767..772">'c'</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="773..809">
+      <td align="center" md-src-pos="773..799"><code md-src-pos="773..798">'abra' , 'cad' , 'abra'</code></td>
+      <td align="center" md-src-pos="800..809"><code md-src-pos="801..809">'abra'</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="811..1020"><strong md-src-pos="811..821">Hints:</strong><br> <span md-src-pos="823..826">Use</span> <code md-src-pos="827..831">if</code> <span md-src-pos="832..869">statements with the logical operators</span> <code md-src-pos="870..875">and</code><span md-src-pos="875..876">,</span> <code md-src-pos="877..881">or</code> <span md-src-pos="882..885">and</span> <code md-src-pos="886..891">not</code><span md-src-pos="891..892">.</span><br> <span md-src-pos="894..908">Alternatively,</span> <span md-src-pos="909..964">you can solve this problem with a list and list methods</span> <span md-src-pos="965..966">-</span> <span md-src-pos="967..972">but I</span>'<span md-src-pos="973..997">ll let you discover that</span> <span md-src-pos="998..1020">method for yourselves.</span></p>
+   <h2 md-src-pos="1022..1055">isa_triangle(len1, len2, len3)</h2>
+   <p md-src-pos="1057..1293"><span md-src-pos="1057..1107">The three parameters are guaranteed to be numbers.</span> <span md-src-pos="1108..1164">If they are interpreted as the lengths of the sides of a</span> <span md-src-pos="1165..1184">euclidean triangle,</span> <span md-src-pos="1185..1271">return an integer to indicate which type of triangle they would construct according to</span> <span md-src-pos="1272..1282">this table</span>:<br><br></p>
+   <table md-src-pos="1295..1418">
+    <thead>
+     <tr md-src-pos="1295..1322">
+      <th align="center" md-src-pos="1295..1313">Return <br>Value</th>
+      <th align="center" md-src-pos="1314..1322">Meaning</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="1336..1364">
+      <td align="center" md-src-pos="1336..1342"><strong md-src-pos="1336..1341">0</strong></td>
+      <td align="center" md-src-pos="1343..1364">No triangle possible</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="1365..1380">
+      <td align="center" md-src-pos="1365..1371"><strong md-src-pos="1365..1370">1</strong></td>
+      <td align="center" md-src-pos="1372..1380">Scalene</td>
+     </tr>
+     <tr md-src-pos="1381..1398">
+      <td align="center" md-src-pos="1381..1387"><strong md-src-pos="1381..1386">2</strong></td>
+      <td align="center" md-src-pos="1388..1398">Isosceles</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="1399..1418">
+      <td align="center" md-src-pos="1399..1405"><strong md-src-pos="1399..1404">3</strong></td>
+      <td align="center" md-src-pos="1406..1418">Equilateral</td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="1420..1957"><strong md-src-pos="1420..1430">Hints:</strong><br> <span md-src-pos="1432..1459">Triangles have three sides.</span> <span md-src-pos="1460..1492">If all are equal lengths then it</span>'<span md-src-pos="1493..1510">s an equilateral.</span> <span md-src-pos="1511..1535">If only two are equal it</span>'<span md-src-pos="1536..1540">s an</span> <span md-src-pos="1541..1560">isosceles triangle.</span> <span md-src-pos="1561..1590">If all sides are different it</span>'<span md-src-pos="1591..1612">s a scalene triangle.</span> <br> <span md-src-pos="1615..1641">As with the first problem,</span> <code md-src-pos="1642..1660">if / elif / else</code> <span md-src-pos="1661..1707">statements combined with the boolean operators</span> <code md-src-pos="1708..1713">and</code><span md-src-pos="1713..1714">,</span> <code md-src-pos="1715..1719">or</code> <span md-src-pos="1720..1723">and</span> <code md-src-pos="1724..1729">not</code> <span md-src-pos="1730..1748">should do the job.</span><br> <span md-src-pos="1750..1803">Do remember though that there are four possibilities.</span> <span md-src-pos="1804..1827">For example what should</span> <code md-src-pos="1828..1850">isa_triangle(2,17,2)</code> <span md-src-pos="1851..1858">return?</span> <span md-src-pos="1859..1869">If you can</span>'<span md-src-pos="1870..1957">t see why that is a problematic triangle try sketching it to scale on a piece of paper.</span></p>
+   <h2 md-src-pos="1959..1980">robberlingo(a_str)</h2>
+   <p md-src-pos="1982..2239"><span md-src-pos="1982..2007">Translate the text string</span> <code md-src-pos="2008..2015">a_str</code> <span md-src-pos="2016..2025">text into</span> "<span md-src-pos="2027..2039">rövarspråket</span>" (<span md-src-pos="2042..2053">Swedish for</span> "<span md-src-pos="2055..2061">robber</span>'<span md-src-pos="2062..2072">s language</span>")<span md-src-pos="2074..2075">.</span> <span md-src-pos="2076..2084">That is,</span> <span md-src-pos="2085..2134">double every consonant and place an occurrence of</span> "<span md-src-pos="2136..2137">o</span>" <span md-src-pos="2139..2150">in between.</span> <span md-src-pos="2151..2163">For example,</span> <span md-src-pos="2164..2173">translate</span>("<span md-src-pos="2175..2186">this is fun</span>") <span md-src-pos="2189..2213">should return the string</span> "<span md-src-pos="2215..2238">tothohisos isos fofunon</span>"</p>
+   <p md-src-pos="2241..2452"><strong md-src-pos="2241..2251">Hints:</strong><br> <span md-src-pos="2253..2297">A consonant is any character in the alphabet</span> <code md-src-pos="2298..2304">a..z</code> <span md-src-pos="2305..2325">that is not a vowel.</span> <span md-src-pos="2326..2347">A vowel is any one of</span> <code md-src-pos="2348..2357">'aeiou'</code><span md-src-pos="2357..2358">.</span> <span md-src-pos="2359..2400">Create both of those as string variables.</span> <span md-src-pos="2401..2421">Might only need one,</span> <span md-src-pos="2422..2452">we can delete the other later.</span></p>
+   <p md-src-pos="2454..2575"><span md-src-pos="2454..2562">The problem asks for a string containing the translation so start by creating an empty string to contain the</span> <span md-src-pos="2563..2575">translation.</span></p>
+   <p md-src-pos="2577..2705"><span md-src-pos="2577..2623">The question asks us to read each character of</span> <code md-src-pos="2624..2631">a_str</code> <span md-src-pos="2632..2666">in turn and act differently if the</span> <code md-src-pos="2667..2681">current_char</code> <span md-src-pos="2682..2684">is</span> <span md-src-pos="2685..2705">a consonant or not.\</span></p>
+   <ul md-src-pos="2707..3000">
+    <li md-src-pos="2707..2803">Reading each character in turn is iteration and which means we need a <code md-src-pos="2779..2786">while</code> or a <code md-src-pos="2792..2797">for</code> loop.</li>
+    <li md-src-pos="2804..2956">If the <code md-src-pos="2813..2832">current_character</code> in <code md-src-pos="2836..2843">a_str</code> is in <code md-src-pos="2850..2862">consonants</code> then add <code md-src-pos="2874..2919">current_character + 'o' + current_character</code> to the end of the translation so far</li>
+    <li md-src-pos="2957..3000">If not, just add the <code md-src-pos="2980..2999">current_character</code>.</li>
+   </ul>
+   <p md-src-pos="3002..3121"><span md-src-pos="3002..3022">The keyword operator</span> <code md-src-pos="3023..3027">in</code> <span md-src-pos="3028..3078">can be used to test if a character is in a string.</span> <span md-src-pos="3079..3082">Try</span> <code md-src-pos="3083..3100">'a' in 'syntax'</code> <span md-src-pos="3101..3107">to see</span> <span md-src-pos="3108..3121">how it works.</span></p>
+   <p md-src-pos="3123..3167"><span md-src-pos="3123..3166">Here is some skeleton code you can build on</span>:</p>
+   <pre md-src-pos="3169..3621"><code class="language-python" md-src-pos="3169..3621"><span md-src-pos="3169..3179"></span><span md-src-pos="3179..3255">a_string = <span style="color: rgb(6, 125, 23);">'abracadabra'</span>  <span style="color: rgb(140, 140, 140);"># this will be provided by the function parameter</span></span>
+<span md-src-pos="3255..3272">vowels = <span style="color: rgb(6, 125, 23);">'aeioi'</span></span>
+<span md-src-pos="3272..3350">consonants = <span style="color: rgb(6, 125, 23);">'bcdfghjklmnpqrstvwxyz'</span>  <span style="color: rgb(140, 140, 140);"># check this is correct (I think it is)</span></span>
+<span md-src-pos="3350..3367">translation = []</span>
+<span md-src-pos="3367..3397"><span style="color: rgb(0, 51, 179);">for</span> current_char <span style="color: rgb(0, 51, 179);">in</span> a_string:</span>
+<span md-src-pos="3397..3465">    <span style="color: rgb(140, 140, 140);"># change this to the code that will build the translated string</span></span>
+<span md-src-pos="3465..3500">    <span style="color: rgb(0, 51, 179);">if</span> current_char <span style="color: rgb(0, 51, 179);">in</span> consonants:</span>
+<span md-src-pos="3500..3557">        print(<span style="color: rgb(6, 125, 23);">'add translated character to translation'</span>)</span>
+<span md-src-pos="3557..3567">    <span style="color: rgb(0, 51, 179);">else</span>:</span>
+<span md-src-pos="3567..3618">        print(<span style="color: rgb(6, 125, 23);">'just add character to translation'</span>)</span>
+<span md-src-pos="3618..3619"></span><span md-src-pos="3618..3621"></span></code></pre>
+   <p md-src-pos="3623..3678"><span md-src-pos="3623..3631">When the</span> <code md-src-pos="3632..3637">for</code> <span md-src-pos="3638..3678">loop exits return the translated string.</span></p>
+   <h2 md-src-pos="3680..3698">pangram(a_str):</h2>
+   <p md-src-pos="3700..3838"><span md-src-pos="3700..3751">Answer true if a_str is a pangram and false if not.</span> <span md-src-pos="3752..3790">Ignore capitalisation and punctuation,</span> <span md-src-pos="3791..3808">only consider the</span> <span md-src-pos="3809..3824">characters a-z.</span><br> <span md-src-pos="3826..3837">For example</span>:</p>
+   <table md-src-pos="3840..4010">
+    <thead>
+     <tr md-src-pos="3840..3871">
+      <th align="center" md-src-pos="3840..3857">parameter values</th>
+      <th align="center" md-src-pos="3858..3871">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="3895..3951">
+      <td align="center" md-src-pos="3895..3943"><code md-src-pos="3895..3942">'the quick brown fox jumps over the lazy dog'</code></td>
+      <td align="center" md-src-pos="3944..3951"><code md-src-pos="3945..3951">True</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="3952..4010">
+      <td align="center" md-src-pos="3952..4001"><code md-src-pos="3952..4000">'the quick brown fox jumped over the lazy dog'</code></td>
+      <td align="center" md-src-pos="4002..4010"><code md-src-pos="4003..4010">False</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="4012..4256"><strong md-src-pos="4012..4022">Hints:</strong><br> <span md-src-pos="4024..4096">A pangram is a phrase that contains all the letters of the alphabet from</span> '<span md-src-pos="4098..4099">a</span>' <span md-src-pos="4101..4103">to</span> '<span md-src-pos="4105..4106">z</span>' <span md-src-pos="4108..4122">at least once.</span> <span md-src-pos="4123..4128">Other</span> <span md-src-pos="4129..4178">characters in the phrase are effectively ignored.</span> <span md-src-pos="4179..4230">As long as a_str contains all the characters of the</span> <span md-src-pos="4231..4240">alphabet,</span> <span md-src-pos="4241..4243">it</span>'<span md-src-pos="4244..4256">s a pangram.</span></p>
+   <p md-src-pos="4258..4586"><span md-src-pos="4258..4364">The question says to ignore capitalisation so a good first step is to convert str_1 to lower case with the</span> <span md-src-pos="4365..4370">lower</span>() <span md-src-pos="4373..4384">or casefold</span>() <span md-src-pos="4387..4411">string methods described</span> <span md-src-pos="4412..4414">at</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" md-src-pos="4415..4505">Python.org Text Sequence Type - str</a> <span md-src-pos="4506..4509">and</span> <span md-src-pos="4510..4512">at</span> <a href="https://www.w3schools.com/python/python_strings_methods.asp" md-src-pos="4513..4585">w3schools</a><span md-src-pos="4585..4586">.</span></p>
+   <p md-src-pos="4588..4948"><span md-src-pos="4588..4657">As repetitions make no difference to a phrase being a pangram or not,</span> <span md-src-pos="4658..4686">and sets ignore repetitions,</span> <span md-src-pos="4687..4695">they are</span> <span md-src-pos="4696..4748">probably going to be useful in solving this problem.</span> <span md-src-pos="4749..4759">Logically,</span> <span md-src-pos="4760..4804">if all the characters in a_str are placed in</span> <span md-src-pos="4805..4862">a set and that set contains every letter in the alphabet,</span> <span md-src-pos="4863..4887">then a_str is a pangram.</span> <span md-src-pos="4888..4913">That sounds like a way to</span> <span md-src-pos="4914..4938">solve the problem so let</span>'<span md-src-pos="4939..4948">s try it.</span></p>
+   <p md-src-pos="4950..4977"><span md-src-pos="4950..4976">Start by creating two sets</span>:</p>
+   <ul md-src-pos="4979..5094">
+    <li md-src-pos="4979..5026">A set containing all the characters in a_str.</li>
+    <li md-src-pos="5027..5094">A set containing all the letters of the alphabet <code md-src-pos="5078..5093">'abc ... xyz'</code>.</li>
+   </ul>
+   <p md-src-pos="5096..5206"><span md-src-pos="5096..5168">To explore how to create these sets start IDLE and execute the statement</span> <code md-src-pos="5169..5184">set('foobar')</code> <span md-src-pos="5185..5201">and see what you</span> <span md-src-pos="5202..5206">get.</span></p>
+   <p md-src-pos="5208..5441"><span md-src-pos="5208..5316">The next step is to remove every character in set of characters in a_str from the alphabet set and check how</span> <span md-src-pos="5317..5342">many characters are left.</span> <span md-src-pos="5343..5421">If the answer is none then a_str must contain every letter in the alphabet and</span> <span md-src-pos="5422..5441">hence is a pangram.</span></p>
+   <p md-src-pos="5443..5546"><span md-src-pos="5443..5457">Problem solved</span> <span md-src-pos="5458..5459">-</span> <span md-src-pos="5460..5480">provided sets can be</span> '<span md-src-pos="5482..5492">subtracted</span>' <span md-src-pos="5494..5546">and there is a way of determining if a set is empty.</span></p>
+   <p md-src-pos="5548..5887"><span md-src-pos="5548..5590">Subtracting one set from another is one of</span> <span md-src-pos="5591..5594">the</span> <a href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset" md-src-pos="5595..5696">set methods and operations</a><span md-src-pos="5696..5697">.</span> <span md-src-pos="5698..5794">Scan through the list of methods and operations available and you should soon spot how to do it.</span> <span md-src-pos="5795..5809">Alternatively,</span> <span md-src-pos="5810..5887">just try subtracting one set from another in IDLE and see what the result is.</span></p>
+   <p md-src-pos="5889..6016"><span md-src-pos="5889..5910">The built-in function</span> <code md-src-pos="5911..5918">len()</code> <span md-src-pos="5919..5966">returns the number of elements in a collection.</span> <span md-src-pos="5967..5996">It works on sets just as well</span> <span md-src-pos="5997..6016">as it does strings.</span></p>
+   <h2 md-src-pos="6018..6039">merge2(str1, str2)</h2>
+   <p md-src-pos="6041..6173"><span md-src-pos="6041..6080">Interleave the successive characters of</span> <strong md-src-pos="6081..6088">two</strong> <span md-src-pos="6089..6147">strings of the same length into a single string and return</span> <span md-src-pos="6148..6159">the result.</span><br> <span md-src-pos="6161..6172">For example</span>:</p>
+   <table md-src-pos="6175..6296">
+    <thead>
+     <tr md-src-pos="6175..6206">
+      <th align="center" md-src-pos="6175..6192">parameter values</th>
+      <th align="center" md-src-pos="6193..6206">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="6230..6246">
+      <td align="center" md-src-pos="6230..6240"><code md-src-pos="6230..6239">'' , ''</code></td>
+      <td align="center" md-src-pos="6241..6246"><code md-src-pos="6242..6246">''</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="6247..6267">
+      <td align="center" md-src-pos="6247..6259"><code md-src-pos="6247..6258">'a' , 'x'</code></td>
+      <td align="center" md-src-pos="6260..6267"><code md-src-pos="6261..6267">'ax'</code></td>
+     </tr>
+     <tr md-src-pos="6268..6296">
+      <td align="center" md-src-pos="6268..6284"><code md-src-pos="6268..6283">'abc' , 'def'</code></td>
+      <td align="center" md-src-pos="6285..6296"><code md-src-pos="6286..6296">'adbecf'</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="6298..6556"><strong md-src-pos="6298..6308">Hints:</strong><br> <span md-src-pos="6310..6332">Strings can be indexed</span>: <code md-src-pos="6334..6340">s[0]</code> <span md-src-pos="6341..6364">is the first character,</span> <code md-src-pos="6365..6371">s[1]</code> <span md-src-pos="6372..6383">the second,</span> <code md-src-pos="6384..6390">s[2]</code> <span md-src-pos="6391..6411">the third and so on.</span> <span md-src-pos="6412..6453">Extending that logic to two lists is easy</span>: <code md-src-pos="6455..6465">str_1[0]</code> <span md-src-pos="6466..6469">and</span> <code md-src-pos="6470..6480">str_2[0]</code><span md-src-pos="6480..6481">,</span> <span md-src-pos="6482..6486">then</span> <code md-src-pos="6487..6497">str_1[1]</code> <span md-src-pos="6498..6501">and</span> <code md-src-pos="6502..6512">str_2[1]</code><span md-src-pos="6512..6513">,</span> <span md-src-pos="6514..6518">then</span> <code md-src-pos="6519..6529">str_1[2]</code> <span md-src-pos="6530..6533">and</span> <code md-src-pos="6534..6544">str_2[2]</code><span md-src-pos="6544..6545">,</span> <span md-src-pos="6546..6556">and so on.</span></p>
+   <p md-src-pos="6558..6879"><span md-src-pos="6558..6655">The key to this problem is instead of iterating through the successive characters of the strings,</span> <span md-src-pos="6656..6663">iterate</span> <span md-src-pos="6664..6751">through the index numbers that can be used to access the characters of the two strings.</span> <span md-src-pos="6752..6771">As indexing applies</span> <span md-src-pos="6772..6879">to all strings these integer index values will enable synchronised access to BOTH strings at the same time.</span></p>
+   <p md-src-pos="6881..7153"><span md-src-pos="6881..6933">How best to generate that sequence of index numbers?</span> <span md-src-pos="6934..6948">We could use a</span> <code md-src-pos="6949..6956">while</code> <span md-src-pos="6957..6984">loop with a counter but far</span> <span md-src-pos="6985..7003">easier is to use a</span> <code md-src-pos="7004..7013">range()</code> <span md-src-pos="7014..7044">object and combine that with a</span> <code md-src-pos="7045..7050">for</code> <span md-src-pos="7051..7056">loop.</span> <span md-src-pos="7057..7087">Here is the beginnings of some</span> <span md-src-pos="7088..7102">skeleton code.</span> <span md-src-pos="7103..7152">Execute it in IDLE to understand what it is doing</span>:</p>
+   <pre md-src-pos="7155..7216"><code class="language-python" md-src-pos="7155..7216"><span md-src-pos="7155..7165"></span><span md-src-pos="7165..7189"><span style="color: rgb(0, 51, 179);">for</span> index <span style="color: rgb(0, 51, 179);">in</span> range(<span style="color: rgb(23, 80, 235);">11</span>):</span>
+<span md-src-pos="7189..7213">    print(index, index)</span>
+<span md-src-pos="7213..7214"></span><span md-src-pos="7213..7216"></span></code></pre>
+   <p md-src-pos="7218..7264"><span md-src-pos="7218..7263">We are now in a position to solve the problem</span>:</p>
+   <ul md-src-pos="7266..7569">
+    <li md-src-pos="7266..7389">Replace the <code md-src-pos="7280..7284">11</code> with the length of the strings by using <code md-src-pos="7325..7337">len(str_1)</code> (either will do as they are both the same length)</li>
+    <li md-src-pos="7390..7456">Create a variable to contain the result string <code md-src-pos="7439..7456">result_str = ''</code></li>
+    <li md-src-pos="7457..7569">On every iteration of the <code md-src-pos="7485..7490">for</code> loop add the indexed characters from both strings to the end of <code md-src-pos="7557..7569">result_str</code></li>
+   </ul>
+   <p md-src-pos="7571..7609"><span md-src-pos="7571..7609">Here my outline for you to build upon.</span></p>
+   <pre md-src-pos="7611..7962"><code class="language-python" md-src-pos="7611..7962"><span md-src-pos="7611..7621"></span><span md-src-pos="7621..7680">str_1 = <span style="color: rgb(6, 125, 23);">'abc'</span>  <span style="color: rgb(140, 140, 140);"># dummy value. This will be parameter value</span></span>
+<span md-src-pos="7680..7739">str_2 = <span style="color: rgb(6, 125, 23);">'xyz'</span>  <span style="color: rgb(140, 140, 140);"># dummy value. This will be parameter value</span></span>
+<span md-src-pos="7739..7825">length_of_str = len(str_1)  <span style="color: rgb(140, 140, 140);"># either will do as they are guaranteed to be same length</span></span>
+<span md-src-pos="7825..7841">result_str = <span style="color: rgb(6, 125, 23);">''</span></span>
+<span md-src-pos="7841..7876"><span style="color: rgb(0, 51, 179);">for</span> index <span style="color: rgb(0, 51, 179);">in</span> range(length_of_str):</span>
+<span md-src-pos="7876..7959">    print(str_1[index] + str_2[index])  <span style="color: rgb(140, 140, 140);"># change this to code to modify result_str</span></span>
+<span md-src-pos="7959..7960"></span><span md-src-pos="7959..7962"></span></code></pre>
+   <p md-src-pos="7964..8182"><span md-src-pos="7964..7981">Replace the print</span>() <span md-src-pos="7984..8058">statement with your code to add the two characters from str_1 and str_2 to</span> <code md-src-pos="8059..8071">result_str</code><span md-src-pos="8071..8072">,</span> <span md-src-pos="8073..8095">wrap it in a function,</span> <span md-src-pos="8096..8151">remove my two dummy strings and use parameters instead,</span> <span md-src-pos="8152..8172">test the final code,</span> <span md-src-pos="8173..8176">and</span> <span md-src-pos="8177..8182">done.</span></p>
+   <h2 md-src-pos="8184..8211">merge3(str1, str2, str3)</h2>
+   <p md-src-pos="8213..8347"><span md-src-pos="8213..8252">Interleave the successive characters of</span> <strong md-src-pos="8253..8262">three</strong> <span md-src-pos="8263..8321">strings of the same length into a single string and return</span> <span md-src-pos="8322..8333">the result.</span><br> <span md-src-pos="8335..8346">For example</span>:</p>
+   <table md-src-pos="8349..8491">
+    <thead>
+     <tr md-src-pos="8349..8380">
+      <th align="center" md-src-pos="8349..8366">parameter values</th>
+      <th align="center" md-src-pos="8367..8380">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="8404..8423">
+      <td align="center" md-src-pos="8404..8417"><code md-src-pos="8404..8416">'', '', ''</code></td>
+      <td align="center" md-src-pos="8418..8423"><code md-src-pos="8419..8423">''</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="8424..8451">
+      <td align="center" md-src-pos="8424..8442"><code md-src-pos="8424..8441">'a', 'b', 'c'</code></td>
+      <td align="center" md-src-pos="8443..8451"><code md-src-pos="8444..8451">'abc'</code></td>
+     </tr>
+     <tr md-src-pos="8452..8491">
+      <td align="center" md-src-pos="8452..8476"><code md-src-pos="8452..8475">'abc', 'def', 'ghj'</code></td>
+      <td align="center" md-src-pos="8477..8491"><code md-src-pos="8478..8491">'adgbehcfj'</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="8493..8625"><strong md-src-pos="8493..8503">Hints:</strong><br> <span md-src-pos="8505..8540">Same logic and design as for merge2</span>()<span md-src-pos="8542..8543">.</span> <span md-src-pos="8544..8609">The only difference is that this time there are now three strings</span> <span md-src-pos="8610..8625">instead of two.</span></p>
+   <h2 md-src-pos="8627..8649">letter_count(a_str)</h2>
+   <p md-src-pos="8651..8900"><span md-src-pos="8651..8691">Return a dictionary with every character</span> (<span md-src-pos="8693..8725">including spaces and punctuation</span>) <span md-src-pos="8727..8751">in a_str as a key in the</span> <span md-src-pos="8752..8838">dictionary with a value equal to the number of occurrences of that character in a_str.</span> <span md-src-pos="8839..8857">Only characters in</span> <span md-src-pos="8858..8900">a_str are keys in the returned dictionary.</span></p>
+   <p md-src-pos="8902..8914"><span md-src-pos="8902..8913">For example</span>:</p>
+   <table md-src-pos="8916..9112">
+    <thead>
+     <tr md-src-pos="8916..8947">
+      <th align="center" md-src-pos="8916..8933">parameter values</th>
+      <th align="center" md-src-pos="8934..8947">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="8971..8982">
+      <td align="center" md-src-pos="8971..8976"><code md-src-pos="8971..8975">''</code></td>
+      <td align="center" md-src-pos="8977..8982"><code md-src-pos="8978..8982">{}</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="8983..9002">
+      <td align="center" md-src-pos="8983..8989"><code md-src-pos="8983..8988">'a'</code></td>
+      <td align="center" md-src-pos="8990..9002"><code md-src-pos="8991..9002">{'a' : 1}</code></td>
+     </tr>
+     <tr md-src-pos="9003..9024">
+      <td align="center" md-src-pos="9003..9011"><code md-src-pos="9003..9010">'aaa'</code></td>
+      <td align="center" md-src-pos="9012..9024"><code md-src-pos="9013..9024">{'a' : 3}</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="9025..9058">
+      <td align="center" md-src-pos="9025..9037"><code md-src-pos="9025..9036">'abbabab'</code></td>
+      <td align="center" md-src-pos="9038..9058"><code md-src-pos="9039..9058">{'a' : 3, 'b': 4}</code></td>
+     </tr>
+     <tr md-src-pos="9059..9112">
+      <td align="center" md-src-pos="9059..9075"><code md-src-pos="9059..9074">'abracadabra'</code></td>
+      <td align="center" md-src-pos="9076..9112"><code md-src-pos="9077..9112">{'a' : 5, 'b': 2, 'c': c, 'd': c}</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="9114..9517"><strong md-src-pos="9114..9124">Hints:</strong><br> <span md-src-pos="9126..9174">First create a dictionary to contain the result.</span> <span md-src-pos="9175..9232">There are several ways to do this but the easiest options</span> <span md-src-pos="9233..9245">are probably</span> <code md-src-pos="9246..9258">d = dict()</code> <span md-src-pos="9259..9296">which creates an empty dictionary and</span> <code md-src-pos="9297..9327">d = dict.fromkeys('abcd', 0)</code> <span md-src-pos="9328..9341">which creates</span> <span md-src-pos="9342..9361">a dictionary with a</span> <em md-src-pos="9362..9367">key</em> <span md-src-pos="9368..9390">for every character in</span> <code md-src-pos="9391..9399">'abcd'</code> <span md-src-pos="9400..9417">associated with a</span> <em md-src-pos="9418..9425">value</em> <span md-src-pos="9426..9428">of</span> <code md-src-pos="9429..9432">0</code><span md-src-pos="9432..9433">.</span> <span md-src-pos="9434..9450">Try both in IDLE</span> <span md-src-pos="9451..9517">to explore what they do and decide which is best for this problem.</span></p>
+   <p md-src-pos="9519..9828"><span md-src-pos="9519..9554">Now that the dictionary is created,</span> <span md-src-pos="9555..9625">we need to iterate through a_str and update the values associated with</span> <span md-src-pos="9626..9638">each letter.</span> <span md-src-pos="9639..9640">A</span> <code md-src-pos="9641..9646">for</code> <span md-src-pos="9647..9670">loop is ideal for this.</span> <span md-src-pos="9671..9733">For each of the characters look up its entry in the dictionary</span> <span md-src-pos="9734..9763">and increment its value by 1.</span> <span md-src-pos="9764..9827">Something like the code I have outlined below should do the job</span>:</p>
+   <pre md-src-pos="9830..10230"><code class="language-python" md-src-pos="9830..10230"><span md-src-pos="9830..9840"></span><span md-src-pos="9840..9881">a_str = <span style="color: rgb(6, 125, 23);">'abracadabra'</span>  <span style="color: rgb(140, 140, 140);"># parameter value</span></span>
+<span md-src-pos="9881..9920">char_count_dict = dict.fromkeys(a_str)</span>
+<span md-src-pos="9920..9939"><span style="color: rgb(0, 51, 179);">for</span> char <span style="color: rgb(0, 51, 179);">in</span> a_str:</span>
+<span md-src-pos="9939..9991">    <span style="color: rgb(140, 140, 140);"># get current value in char_count_dict for char</span></span>
+<span md-src-pos="9991..10023">    <span style="color: rgb(140, 140, 140);">#     char_count_dict[char]</span></span>
+<span md-src-pos="10023..10058">    <span style="color: rgb(140, 140, 140);"># and increment its value by 1</span></span>
+<span md-src-pos="10058..10111">    <span style="color: rgb(140, 140, 140);">#     char_count_dict[char] = previous value + 1</span></span>
+<span md-src-pos="10111..10170">    <span style="color: rgb(0, 51, 179);">pass</span>  <span style="color: rgb(140, 140, 140);"># dummy statement just to make my syntax correct</span></span>
+<span md-src-pos="10170..10227"><span style="color: rgb(140, 140, 140);"># and that's it so just return the dictionary char_count</span></span>
+<span md-src-pos="10227..10228"></span><span md-src-pos="10227..10230"></span></code></pre>
+   <p md-src-pos="10232..10464"><span md-src-pos="10232..10268">Find the dictionary methods you need</span> <span md-src-pos="10269..10271">at</span> <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict" md-src-pos="10272..10363">Python.org dictionary</a> <span md-src-pos="10364..10369">or on</span> <a href="https://www.w3schools.com/python/python_dictionaries_change.asp" md-src-pos="10370..10463">W3Schools.com dictionaries</a><span md-src-pos="10463..10464">.</span></p>
+   <h1 md-src-pos="10466..10504">Too difficult for now - NOT assessed</h1>
+   <p md-src-pos="10506..10725"><span md-src-pos="10506..10544">These last questions are not assessed.</span> <span md-src-pos="10545..10614">I have left them in this script only so that you have continuity with</span> <span md-src-pos="10615..10636">the previous version.</span> <span md-src-pos="10637..10679">If you attempt them I will mark your work,</span> <span md-src-pos="10680..10719">but you suffer no penalty for not doing</span> <span md-src-pos="10720..10725">them.</span></p>
+   <h2 md-src-pos="10727..10742">runup(a_str)</h2>
+   <p md-src-pos="10744..11049"><span md-src-pos="10744..10822">The parameter a_str is guaranteed to be a string made entirely of alphanumeric</span> [a...z][0...9] <span md-src-pos="10838..10849">characters.</span> <span md-src-pos="10850..10943">Answer the starting position and length of the longest non-decreasing substring within a_str.</span> <span md-src-pos="10944..10956">If there are</span> <span md-src-pos="10957..10982">multiple such substrings,</span> <span md-src-pos="10983..11000">report the first.</span> <span md-src-pos="11001..11025">If a_str is empty return</span> ( <span md-src-pos="11028..11031">-1,</span> <span md-src-pos="11032..11033">0</span>)<span md-src-pos="11034..11035">.</span><br> <span md-src-pos="11037..11048">For example</span>:</p>
+   <table md-src-pos="11051..11301">
+    <thead>
+     <tr md-src-pos="11051..11094">
+      <th align="center" md-src-pos="11051..11068">parameter values</th>
+      <th align="center" md-src-pos="11069..11083">return value</th>
+      <th align="center" md-src-pos="11084..11094">substring</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="11123..11144">
+      <td align="center" md-src-pos="11123..11128"><code md-src-pos="11123..11127">''</code></td>
+      <td align="center" md-src-pos="11129..11138"><code md-src-pos="11130..11137">-1, 0</code></td>
+      <td align="center" md-src-pos="11139..11144"><code md-src-pos="11140..11144">''</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="11145..11167">
+      <td align="center" md-src-pos="11145..11151"><code md-src-pos="11145..11150">'z'</code></td>
+      <td align="center" md-src-pos="11152..11160"><code md-src-pos="11153..11159">0, 1</code></td>
+      <td align="center" md-src-pos="11161..11167"><code md-src-pos="11162..11167">'z'</code></td>
+     </tr>
+     <tr md-src-pos="11168..11197">
+      <td align="center" md-src-pos="11168..11179"><code md-src-pos="11168..11178">'ababcb'</code></td>
+      <td align="center" md-src-pos="11180..11188"><code md-src-pos="11181..11187">2, 3</code></td>
+      <td align="center" md-src-pos="11189..11197"><code md-src-pos="11190..11197">'abc'</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="11198..11234">
+      <td align="center" md-src-pos="11198..11215"><code md-src-pos="11198..11214">'bus27herenow'</code></td>
+      <td align="center" md-src-pos="11216..11224"><code md-src-pos="11217..11223">1, 4</code></td>
+      <td align="center" md-src-pos="11225..11234"><code md-src-pos="11226..11234">'us27'</code></td>
+     </tr>
+     <tr md-src-pos="11235..11271">
+      <td align="center" md-src-pos="11235..11252"><code md-src-pos="11235..11251">'bus21herenow'</code></td>
+      <td align="center" md-src-pos="11253..11261"><code md-src-pos="11254..11260">8, 4</code></td>
+      <td align="center" md-src-pos="11262..11271"><code md-src-pos="11263..11271">'enow'</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="11272..11301">
+      <td align="center" md-src-pos="11272..11282"><code md-src-pos="11272..11281">'27991'</code></td>
+      <td align="center" md-src-pos="11283..11291"><code md-src-pos="11284..11290">0, 4</code></td>
+      <td align="center" md-src-pos="11292..11301"><code md-src-pos="11293..11301">'2799'</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="11303..11377"><strong md-src-pos="11303..11313">Hints:</strong><br> <em md-src-pos="11315..11377">There are many ways to solve this problem. This is just one.</em></p>
+   <p md-src-pos="11379..11783"><span md-src-pos="11379..11484">It is often very helpful when trying to solve these more difficult problems to first try and think how it</span> <span md-src-pos="11485..11505">might be solved with</span> '<span md-src-pos="11507..11512">paper</span> <span md-src-pos="11513..11514">&amp;</span> <span md-src-pos="11515..11521">pencil</span>'<span md-src-pos="11522..11523">.</span> <span md-src-pos="11524..11534">Doing that</span> '<span md-src-pos="11536..11541">paper</span> <span md-src-pos="11542..11543">&amp;</span> <span md-src-pos="11544..11550">pencil</span>' <span md-src-pos="11552..11560">exercise</span> (<span md-src-pos="11562..11588">yes I actually did do that</span>) <span md-src-pos="11590..11695">shows that just one iteration through the list is all that is needed but there are several things to keep</span> <span md-src-pos="11696..11783">track of at the same time which means it can be tricky keeping everything synchronised.</span></p>
+   <p md-src-pos="11785..11876"><span md-src-pos="11785..11832">Starting from the assumption that it would be a</span> <code md-src-pos="11833..11838">for</code> <span md-src-pos="11839..11844">loop,</span> <span md-src-pos="11845..11875">the items to keep track of are</span>:</p>
+   <table md-src-pos="11878..12215">
+    <thead>
+     <tr md-src-pos="11878..11896">
+      <th md-src-pos="11878..11887">Variable</th>
+      <th md-src-pos="11888..11896">meaning</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="11905..12000">
+      <td md-src-pos="11905..11918">current_char</td>
+      <td md-src-pos="11919..12000">the character currently being evaluated<br> in this iteration of the <code md-src-pos="11990..11995">for</code> loop</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="12001..12062">
+      <td md-src-pos="12001..12014">previous_char</td>
+      <td md-src-pos="12015..12062">the immediately preceding character in <code md-src-pos="12055..12062">a_str</code></td>
+     </tr>
+     <tr md-src-pos="12063..12129">
+      <td md-src-pos="12063..12078">current_longest</td>
+      <td md-src-pos="12079..12129">the characters in this current non-decreasing run</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="12130..12215">
+      <td md-src-pos="12130..12146">previous_longest</td>
+      <td md-src-pos="12147..12215">the longest sequence of non-decreasing<br> characters found so far</td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="12217..12315"><span md-src-pos="12217..12309">To start with these are all empty so create them and make them all equal to the empty string</span> <code md-src-pos="12310..12314">''</code><span md-src-pos="12314..12315">.</span></p>
+   <p md-src-pos="12317..12386"><span md-src-pos="12317..12322">Next,</span> <span md-src-pos="12323..12338">iterate through</span> <code md-src-pos="12339..12346">a_str</code> <span md-src-pos="12347..12353">with a</span> <code md-src-pos="12354..12359">for</code> <span md-src-pos="12360..12365">loop.</span> <span md-src-pos="12366..12385">Something like this</span>:</p>
+   <pre md-src-pos="12388..12649"><code class="language-python" md-src-pos="12388..12649"><span md-src-pos="12282..12292"></span><span md-src-pos="12292..12366">a_str = <span style="color: rgb(6, 125, 23);">'abracadabra'</span>  <span style="color: rgb(140, 140, 140);"># in the function this will be the parameter value</span></span>
+<span md-src-pos="12366..12384">current_char = <span style="color: rgb(6, 125, 23);">''</span></span>
+<span md-src-pos="12384..12403">previous_char = <span style="color: rgb(6, 125, 23);">''</span></span>
+<span md-src-pos="12403..12424">current_longest = <span style="color: rgb(6, 125, 23);">''</span></span>
+<span md-src-pos="12424..12446">previous_longest = <span style="color: rgb(6, 125, 23);">''</span></span>
+<span md-src-pos="12446..12473"><span style="color: rgb(0, 51, 179);">for</span> current_char <span style="color: rgb(0, 51, 179);">in</span> a_str:</span>
+<span md-src-pos="12473..12490">    <span style="color: rgb(140, 140, 140);">## do things</span></span>
+<span md-src-pos="12490..12540">    print(current_char)  <span style="color: rgb(140, 140, 140);"># just a placeholder    </span></span>
+<span md-src-pos="12540..12541"></span><span md-src-pos="12540..12543"></span></code></pre>
+   <p md-src-pos="12651..12739"><span md-src-pos="12651..12661">Inside the</span> <code md-src-pos="12662..12667">for</code> <span md-src-pos="12668..12683">loop we need an</span> <code md-src-pos="12684..12688">if</code> <span md-src-pos="12689..12738">statement to cope with two alternative situations</span>:</p>
+   <ol md-src-pos="12741..13198">
+    <li md-src-pos="12741..12891">The current non-descending sequence has ended because <code md-src-pos="12798..12812">current_char</code> &lt; <code md-src-pos="12815..12830">previous_char</code>.<br>Set the <code md-src-pos="12847..12864">current_longest</code> to just the <code md-src-pos="12877..12891">current_char</code></li>
+    <li md-src-pos="12892..13198">The current non-decreasing sequence is still OK because <code md-src-pos="12951..12965">current_char</code> &gt;= <code md-src-pos="12969..12984">previous_char</code>. <br> The current run is still good so add the <code md-src-pos="13036..13050">current_char</code> to the end of the <code md-src-pos="13069..13086">current_longest</code>.<br> Compare the current_longest to the previous_longest and if it's longer make it the <code md-src-pos="13179..13197">previous_longest</code>.</li>
+   </ol>
+   <p md-src-pos="13200..13322"><span md-src-pos="13200..13209">After the</span> <code md-src-pos="13210..13214">if</code> <span md-src-pos="13215..13231">statement assign</span> <code md-src-pos="13232..13246">current_char</code> <span md-src-pos="13247..13249">to</span> <code md-src-pos="13250..13265">previous_char</code> <span md-src-pos="13266..13306">because it needs to be available for the</span> <span md-src-pos="13307..13322">next iteration.</span></p>
+   <p md-src-pos="13324..13415"><span md-src-pos="13324..13395">When the for loop finishes the longest run will be held in the variable</span> <code md-src-pos="13396..13414">previous_longest</code><span md-src-pos="13414..13415">.</span></p>
+   <p md-src-pos="13417..13703"><span md-src-pos="13417..13480">The question asks for the starting position of the longest run.</span> <span md-src-pos="13481..13510">We could do that by iterating</span> <span md-src-pos="13511..13518">through</span> <code md-src-pos="13519..13526">a_str</code> <span md-src-pos="13527..13548">again to look for it,</span> <span md-src-pos="13549..13575">but there is an easier way</span> <span md-src-pos="13576..13577">-</span> <span md-src-pos="13578..13599">use the string method</span> <code md-src-pos="13600..13608">find()</code><span md-src-pos="13608..13609">.</span> <span md-src-pos="13610..13613">The</span> <span md-src-pos="13614..13666">question also asks for the length of the longest run</span> <span md-src-pos="13667..13668">-</span> <span md-src-pos="13669..13677">but that</span>'<span md-src-pos="13678..13685">s easy,</span> <span md-src-pos="13686..13694">just use</span> <code md-src-pos="13695..13702">len()</code><span md-src-pos="13702..13703">.</span></p>
+   <pre md-src-pos="13705..13773"><code md-src-pos="13705..13773"><span md-src-pos="13705..13709"></span><span md-src-pos="13709..13769">result = a_str.find(previous_longest), len(previous_longest)</span>
+<span md-src-pos="13770..13770"></span><span md-src-pos="13770..13773"></span></code></pre>
+   <p md-src-pos="13775..13878"><span md-src-pos="13775..13834">This code works for all inputs EXCEPT for the empty string.</span> <span md-src-pos="13835..13853">To fix that add an</span> <code md-src-pos="13854..13858">if</code> <span md-src-pos="13859..13877">statement to check</span>:</p>
+   <pre md-src-pos="13880..13959"><code md-src-pos="13880..13959"><span md-src-pos="13880..13884"></span><span md-src-pos="13884..13934">if a_str == '':  # parameter value is empty string</span>
+<span md-src-pos="13935..13955">    result = (-1, 0)</span>
+<span md-src-pos="13956..13956"></span><span md-src-pos="13956..13959"></span></code></pre>
+   <p md-src-pos="13961..14011"><span md-src-pos="13961..13969">Finally,</span> <span md-src-pos="13970..13973">add</span> <code md-src-pos="13974..13989">return result</code> <span md-src-pos="13990..14011">statement to function</span></p>
+   <h2 md-src-pos="14013..14030">mergen_short()</h2>
+   <p md-src-pos="14032..14236"><span md-src-pos="14032..14071">Interleave the successive characters of</span> <strong md-src-pos="14072..14086">any number</strong> <span md-src-pos="14087..14100">of strings of</span> <strong md-src-pos="14101..14115">any length</strong> <span md-src-pos="14116..14140">into a single string and</span> <span md-src-pos="14141..14159">return the result.</span><br> <span md-src-pos="14161..14222">Interleaving is halted when the shortest string is exhausted.</span><br> <span md-src-pos="14224..14235">For example</span>:</p>
+   <table md-src-pos="14238..14406">
+    <thead>
+     <tr md-src-pos="14238..14269">
+      <th align="center" md-src-pos="14238..14255">parameter values</th>
+      <th align="center" md-src-pos="14256..14269">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="14293..14312">
+      <td align="center" md-src-pos="14293..14306"><code md-src-pos="14293..14305">'', '', ''</code></td>
+      <td align="center" md-src-pos="14307..14312"><code md-src-pos="14308..14312">''</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="14313..14343">
+      <td align="center" md-src-pos="14313..14334"><code md-src-pos="14313..14333">'abc', 'd', 'ef'</code></td>
+      <td align="center" md-src-pos="14335..14343"><code md-src-pos="14336..14343">'ade'</code></td>
+     </tr>
+     <tr md-src-pos="14344..14406">
+      <td align="center" md-src-pos="14344..14385"><code md-src-pos="14344..14384">'abc_', 'defg', 'hjkmn', 'pqr', 'stuv'</code></td>
+      <td align="center" md-src-pos="14386..14406"><code md-src-pos="14387..14406">'adhpsbejqtcfkru'</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="14408..14629"><strong md-src-pos="14408..14418">Hints:</strong><br> <span md-src-pos="14420..14469">The problem has many similarities to the previous</span> <code md-src-pos="14470..14480">mergeX()</code> <span md-src-pos="14481..14527">problems but this time there can be any number</span> <span md-src-pos="14528..14549">of parameter strings,</span> <span md-src-pos="14550..14588">and they can all be different lengths.</span> <span md-src-pos="14589..14628">So some immediate problems to solve are</span>:</p>
+   <ol md-src-pos="14631..14807">
+    <li md-src-pos="14631..14691">How do functions that take any number of parameters work?</li>
+    <li md-src-pos="14692..14759">How to stop the iteration when the shortest string is exhausted?</li>
+    <li md-src-pos="14760..14807">How to merge an arbitrary number of strings?</li>
+   </ol>
+   <p md-src-pos="14809..15199"><span md-src-pos="14809..14908">Functions that take an arbitrary number of argument parameters are described in the Python tutorial</span> <span md-src-pos="14909..14911">at</span> <a href="https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists" md-src-pos="14912..15023">4.8.4. Arbitrary Argument Lists</a> <span md-src-pos="15024..15030">and at</span> <a href="https://www.w3schools.com/python/python_functions.asp" md-src-pos="15031..15097">w3schools</a> (<span md-src-pos="15099..15125">a little way down the page</span>)<span md-src-pos="15126..15127">.</span> <span md-src-pos="15128..15131">The</span> <span md-src-pos="15132..15198">short explanation is that the function definition should look like</span>:</p>
+   <pre md-src-pos="15201..15256"><code class="language-python" md-src-pos="15201..15256"><span md-src-pos="15095..15105"></span><span md-src-pos="15105..15124"><span style="color: rgb(0, 51, 179);">def</span> f_name(*args):</span>
+<span md-src-pos="15124..15135">    <span style="color: rgb(140, 140, 140);"># code</span></span>
+<span md-src-pos="15135..15147">    <span style="color: rgb(0, 51, 179);">return</span> </span>
+<span md-src-pos="15147..15148"></span><span md-src-pos="15147..15150"></span></code></pre>
+   <p md-src-pos="15258..15417"><span md-src-pos="15258..15350">The strings will then be available within the function body as the elements of a list called</span> <code md-src-pos="15351..15357">args</code><span md-src-pos="15357..15358">.</span> <span md-src-pos="15359..15366">So this</span> <span md-src-pos="15367..15416">function will have an outline structure like this</span>:</p>
+   <pre md-src-pos="15419..15727"><code class="language-python" md-src-pos="15419..15727"><span md-src-pos="15313..15323"></span><span md-src-pos="15323..15401"><span style="color: rgb(0, 51, 179);">def</span> merge_short(*args):  <span style="color: rgb(140, 140, 140);"># 'args' is traditional, it can be any variable name</span></span>
+<span md-src-pos="15401..15468">    <span style="color: rgb(140, 140, 140);"># args is now available as a variable within the function body</span></span>
+<span md-src-pos="15468..15522">    <span style="color: rgb(140, 140, 140);"># args is a list of the strings to be interleaved</span></span>
+<span md-src-pos="15522..15568">    result_str = []  <span style="color: rgb(140, 140, 140);"># destination for result</span></span>
+<span md-src-pos="15568..15596">    <span style="color: rgb(140, 140, 140);"># code goes here . . . </span></span>
+<span md-src-pos="15596..15618">    <span style="color: rgb(0, 51, 179);">return</span> result_str</span>
+<span md-src-pos="15618..15619"></span><span md-src-pos="15618..15621"></span></code></pre>
+   <p md-src-pos="15729..16076"><span md-src-pos="15729..15737">For part</span> (<span md-src-pos="15739..15740">2</span>) <span md-src-pos="15742..15803">we need to find the shortest string in the list of strings in</span> <code md-src-pos="15804..15810">args</code><span md-src-pos="15810..15811">.</span> <span md-src-pos="15812..15837">There are many ways to do</span> <span md-src-pos="15838..15941">this but perhaps the simplest is to create another list and put all the lengths of the strings in that.</span> <span md-src-pos="15942..15946">Then</span> <span md-src-pos="15947..15979">we can use the built-in function</span> <code md-src-pos="15980..15987">min()</code> <span md-src-pos="15988..15999">to evaluate</span> <code md-src-pos="16000..16022">min(list_of_lengths)</code><span md-src-pos="16022..16023">.</span> <span md-src-pos="16024..16052">Some code along the lines of</span> <span md-src-pos="16053..16075">this should do the job</span>:</p>
+   <pre md-src-pos="16078..16451"><code class="language-python" md-src-pos="16078..16451"><span md-src-pos="15972..15982"></span><span md-src-pos="15982..16090">args = [<span style="color: rgb(6, 125, 23);">'1st str'</span>, <span style="color: rgb(6, 125, 23);">'next str'</span>, <span style="color: rgb(6, 125, 23);">'one after that'</span>]  <span style="color: rgb(140, 140, 140);"># this is just an example, args is automatically created </span></span>
+<span md-src-pos="16090..16154">list_of_lengths = []  <span style="color: rgb(140, 140, 140);"># the list of string lengths will go here</span></span>
+<span md-src-pos="16154..16179"><span style="color: rgb(0, 51, 179);">for</span> each_string <span style="color: rgb(0, 51, 179);">in</span> args:</span>
+<span md-src-pos="16179..16224">    list_of_lengths.append(len(each_string))</span>
+<span md-src-pos="16224..16296"><span style="color: rgb(140, 140, 140);"># all the lengths of all the strings in args are now in list_of_lengths</span></span>
+<span md-src-pos="16296..16342">shortest_string_length = min(list_of_lengths)</span>
+<span md-src-pos="16342..16343"></span><span md-src-pos="16342..16345"></span></code></pre>
+   <p md-src-pos="16453..16677"><span md-src-pos="16453..16471">The answer to part</span> (<span md-src-pos="16473..16474">3</span>) <span md-src-pos="16476..16524">is that as all the strings are in a single list,</span> <span md-src-pos="16525..16537">we can use a</span> <code md-src-pos="16538..16543">for</code> <span md-src-pos="16544..16548">loop</span> <span md-src-pos="16549..16553">with</span> <code md-src-pos="16554..16563">range()</code> <span md-src-pos="16564..16586">to iterate through it,</span> <span md-src-pos="16587..16650">adding one character from each successive string as the list is</span> <span md-src-pos="16651..16661">traversed.</span> <span md-src-pos="16662..16676">Something like</span>:</p>
+   <pre md-src-pos="16679..16933"><code md-src-pos="16679..16933"><span md-src-pos="16679..16683"></span><span md-src-pos="16683..16694">result = []</span>
+<span md-src-pos="16695..16738">for index in range(shortest_string_length):</span>
+<span md-src-pos="16739..16764">    for each_str in args:</span>
+<span md-src-pos="16765..16803">        result.append(each_str[index])</span>
+<span md-src-pos="16804..16881"># for loops ended. Assemble list of characters in result into a single string</span>
+<span md-src-pos="16882..16905">result = ''join(result)</span>
+<span md-src-pos="16906..16929"># and return the result</span>
+<span md-src-pos="16930..16930"></span><span md-src-pos="16930..16933"></span></code></pre>
+   <h2 md-src-pos="16935..16951">mergen_long()</h2>
+   <p md-src-pos="16953..17209"><span md-src-pos="16953..16992">Interleave the successive characters of</span> <strong md-src-pos="16993..17007">any number</strong> <span md-src-pos="17008..17021">of strings of</span> <strong md-src-pos="17022..17036">any length</strong> <span md-src-pos="17037..17061">into a single string and</span> <span md-src-pos="17062..17080">return the result.</span><br> <span md-src-pos="17082..17121">As individual strings become exhausted,</span> <span md-src-pos="17122..17184">continue interleaving with the remaining strings until all are</span> <span md-src-pos="17185..17195">exhausted.</span><br> <span md-src-pos="17197..17208">For example</span>:</p>
+   <table md-src-pos="17211..17387">
+    <thead>
+     <tr md-src-pos="17211..17242">
+      <th align="center" md-src-pos="17211..17228">parameter values</th>
+      <th align="center" md-src-pos="17229..17242">return value</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="17266..17285">
+      <td align="center" md-src-pos="17266..17279"><code md-src-pos="17266..17278">'', '', ''</code></td>
+      <td align="center" md-src-pos="17280..17285"><code md-src-pos="17281..17285">''</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="17286..17319">
+      <td align="center" md-src-pos="17286..17307"><code md-src-pos="17286..17306">'abc', 'd', 'ef'</code></td>
+      <td align="center" md-src-pos="17308..17319"><code md-src-pos="17309..17319">'adebfc'</code></td>
+     </tr>
+     <tr md-src-pos="17320..17387">
+      <td align="center" md-src-pos="17320..17361"><code md-src-pos="17320..17360">'abc_', 'defg', 'hjkmn', 'pqr', 'stuv'</code></td>
+      <td align="center" md-src-pos="17362..17387"><code md-src-pos="17363..17387">'adhpsbejqtcfkru_gmvn'</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="17389..17885"><strong md-src-pos="17389..17399">Hints:</strong><br> <span md-src-pos="17401..17450">Much of the structure of the function mergen_long</span>()<span md-src-pos="17452..17478">is similar to mergen_short</span>() <span md-src-pos="17481..17509">but with an additional check</span> <span md-src-pos="17510..17552">before a character is added to the result.</span><br> <span md-src-pos="17554..17579">The value of the variable</span> <code md-src-pos="17580..17587">index</code> <span md-src-pos="17588..17662">used to access elements of the strings will start at zero and successively</span> <span md-src-pos="17663..17715">increment to the last element of the longest string.</span> <span md-src-pos="17716..17768">Because some strings may be shorter than the longest</span> <span md-src-pos="17769..17776">string,</span> <span md-src-pos="17777..17798">we need to check that</span> <code md-src-pos="17799..17808">[index]</code> <span md-src-pos="17809..17876">is not beyond the end of the string before attempting to access any</span> <span md-src-pos="17877..17884">string.</span></p>
+  </div>
+ </body>
+</html>
