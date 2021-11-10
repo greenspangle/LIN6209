@@ -1,0 +1,11 @@
+pg66584.txt	= Title: The World of Chance	Author: W. D. Howells	Release Date: October 21, 2021 [eBook #66584]	Language: English
+pg66577.txt	= Title: We Were There at the Normandy Invasion	Author: Clayton Knight	Contributor: Ralph Royce	Release Date: October 20, 2021	eBook #66577]	Language: English
+pg46.txt	= Title: A Christmas Carol A Ghost Story of Christmas	Author: Charles Dickens	Release Date: 1992 [eBook #46][Most recently updated: March 4, 2018]	Language: English
+pg22120.txt	= Title: Chaucer’s Works, Volume 4 (of 7) — The Canterbury Tales	Author: Geoffrey Chaucer	Editor: Walter Skeat	Release Date: July 22, 2007 [eBook #22120]	[Most recently updated: April 29, 2021]	Language: Middle English	Character set encoding: UTF-8
+25248-0.txt	= Title: Ping Iau Chuan	Author: Guan Jung  Luo	Release Date: April 30, 2008 [EBook #25248]	Language: Chinese	Character set encoding: UTF-8
+16328-0.txt	= Title: Beowulf An Anglo-Saxon Epic Poem	Author: Translated From The Heyne-Socin Text by Lesslie Hall	Release Date: July 19, 2005 [eBook #16328][Most recently updated: February 13, 2021]	Language: English	Character set encoding: UTF-8
+2600-0.txt	= Title: War and Peace	Author: Leo Tolstoy	Translators: Louise and Aylmer Maude	Release Date: April, 2001 [eBook #2600][Most recently updated: January 21, 2019]	Language: English	Character set encoding: UTF-8
+1342-0.txt	= Title: Pride and Prejudice	Author: Jane Austen	Release Date: June, 1998 [eBook #1342][Most recently updated: August 23, 2021]	Language: English	Character set encoding: UTF-8
+1232-0.txt	= Title: The Prince	Author: Nicolo Machiavelli	Translator: W. K. Marriott	Release Date: March, 1998 [eBook #1232][Most recently updated: January 2, 2021]		Language: English	Character set encoding: UTF-8
+244-0.txt	= Title: A Study In Scarlet	Author: Arthur Conan Doyle	Posting Date: July 12, 2008 [EBook #244]	Release Date: April, 1995 Last Updated: September 30, 2016	Language: English	Character set encoding: UTF-8
+22120-0.txt = Title: Chaucer’s Works, Volume 4 (of 7) — The Canterbury Tales    Author: Geoffrey Chaucer    Editor: Walter Skeat    Release Date: July 22, 2007 [eBook #22120][Most recently updated: April 29, 2021]   Language: Middle English    Character set encoding: UTF-8

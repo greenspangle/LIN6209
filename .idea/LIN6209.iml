@@ -3,7 +3,6 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/recordings" />
-      <excludeFolder url="file://$MODULE_DIR$/resources" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/w2_functions/w2_assignment/.pytest_cache/v" />
       <excludeFolder url="file://$MODULE_DIR$/w3_if_while/.pytest_cache/v" />
