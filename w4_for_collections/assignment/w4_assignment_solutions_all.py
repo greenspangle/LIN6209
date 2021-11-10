@@ -167,4 +167,161 @@ def letter_count(a_str):
     # all letters done, return the resulting dictionary
     return letter_dict
 
-# end #
+
+"""
+Too difficult for now - NOT assessed
+These last questions are not assessed. 
+I have left them in this script only so that you have continuity with the previous version. 
+If you attempt them I will mark your work, but you suffer no penalty for not doing them.
+"""
+
+
+def mergen_short(*tuple_of_strings):
+    """Interleave the successive characters of any number of strings of any length into a single string and return the
+    result. Interleaving is halted when the shortest string is exhausted."""
+    # the strings to be interleaved are the elements of the tuple tuple_of_strings
+    # get the length of the shortest
+    lengths = []
+    for each_str in tuple_of_strings:
+        lengths.append(len(each_str))
+    shortest_len = min(lengths)
+    # and now it's the same logic as merge2 and merge3 except we have to use another loop
+    result = []
+    for i in range(shortest_len):
+        for each_str in tuple_of_strings:
+            result.append(each_str[i])
+    # all strings processed, now transform the result from list to a single string
+    result = ''.join(result)
+    # and return it
+    return result
+
+    pass
+
+
+def mergen_long(*tuple_of_strings):
+    """Interleave the successive characters of any number of strings of any length into a single string and return
+    the result. As individual strings become exhausted, continue interleaving with the remaining strings until all
+    are exhausted."""
+    # the strings to be interleaved are the elements of the tuple tuple_of_strings
+    # get the length of the longest
+    lengths = []
+    for a_str in tuple_of_strings:
+        lengths.append(len(a_str))
+    longest_len = max(lengths)
+    # and now it's the same logic as mergen_shortest except except we have to use an explicit
+    # test for exhausted strings
+    result = []
+    for i in range(longest_len):
+        for a_str in tuple_of_strings:
+            if i < len(a_str):
+                result.append(a_str[i])
+    # all strings processed, now transform the result from list to a single string
+    result = ''.join(result)
+    # and return it
+    return result
+
+
+def runup_v1(a_str):
+    """The parameter a_str is guaranteed to be a string made entirely of alphanumeric ([a..z][0..9]) characters.
+    Answer the starting position and length of the longest non-decreasing substring within a_str.
+    If there are multiple such substrings, report the first. If a_str is empty return (-1, 0).
+    """
+    # solution using indexing
+    longest_start = 0
+    longest_run = 0
+    current_start = 0
+    current_run = 1
+    if len(a_str) == 0:  # test for empty string
+        longest_start = -1
+        longest_run = 0
+    elif len(a_str) == 1:  # test for string of length 1
+        longest_start = 0
+        longest_run = 1
+    else:  # string length is 2 or longer
+        for i in range(1, len(a_str)):
+            if a_str[i] >= a_str[i - 1]:  # current run continued
+                current_run += 1
+            else:  # current run has ended because of decline
+                if current_run > longest_run:  # new longest run found
+                    longest_start = current_start
+                    longest_run = current_run
+                # reset for new run starting from current position
+                current_start = i
+                current_run = 1
+        # at end of a_str. Check last substring is not the longest
+        if current_run > longest_run:
+            # sequence at end is longest
+            longest_start = current_start
+            longest_run = current_run
+    return longest_start, longest_run
+
+
+def runup_v2(a_str):
+    # solution using substrings
+    longest_run = ''  # longest substring found so far
+    current_run = ''  # substring currently being tested
+    previous_char = ''
+    for current_char in a_str:  # iterate thru a_str
+        if current_char >= previous_char:  # existing run is still good
+            current_run += current_char  # append current character to current_run
+            if len(current_run) > len(longest_run):  # if current_run is now longest
+                longest_run = current_run  #  update longest_run to this one
+        else:  # current_run run has ended
+            current_run = current_char  # reset current run to just current character
+        previous_char = current_char  # remember current char on next iteration loop
+    # reached end os a_str, so now assemble result
+    if a_str == '':
+        result = (-1, 0)
+    else:
+        start_index = a_str.find(longest_run)
+        result = (start_index, len(longest_run))
+    return result
+
+
+def runup_v3(a_str):
+    # best of both
+    longest_run = ''
+    longest_start = -1
+    current_run = ''
+    previous_char = ''
+    for i in range(1, len(a_str)):
+        if a_str[i] >= previous_char:  # current run continued
+            current_run += 1
+        else:  # current run has ended because of decline
+            if current_run > longest_run:  # new longest run found
+                longest_start = current_start
+                longest_run = current_run
+            # reset for new run starting from current position
+            current_start = i
+            current_run = 1
+    # at end of a_str. Check last substring is not the longest
+    # return the correct result
+    # ToDo
+
+
+def runup_v4(a_str):
+    # perhaps the simplest
+    # current_char = ''
+    previous_char = ''
+    current_longest = ''
+    previous_longest = ''
+    for current_char in a_str:
+        if current_char < previous_char:  # current run has ended
+            if current_longest > previous_longest:
+                previous_longest = current_longest
+            current_longest = current_char
+        else:  # current run is OK so add current_char to it
+            current_longest = current_longest + current_char
+        previous_char = current_char  # end of this loop, get things ready for next
+    # for loop has ended, now assemble result
+    if len(a_str) == 0:
+        result = (-1, 0)
+    else:
+        result = a_str.find(previous_longest), len(previous_longest)
+    return result
+
+
+runup = runup_v3  # I like this one best - when it is finished
+
+if __name__ == '__main__':
+    runup_v2('zabcaa')

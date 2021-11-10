@@ -5,6 +5,10 @@
       <excludeFolder url="file://$MODULE_DIR$/recordings" />
       <excludeFolder url="file://$MODULE_DIR$/resources" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/w2_functions/w2_assignment/.pytest_cache/v" />
+      <excludeFolder url="file://$MODULE_DIR$/w3_if_while/.pytest_cache/v" />
+      <excludeFolder url="file://$MODULE_DIR$/w3_if_while/test/.pytest_cache/v" />
+      <excludeFolder url="file://$MODULE_DIR$/w4_for_collections/assignment/.pytest_cache/v" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -47,15 +47,16 @@ def score_4(red1, red2, blue1, blue2):
           blue dice is also seven, in which case score 14
         4 Unless the four dice are any permutation of (3,3,4,4), in which case score 21 """
     # a sequence of if statements covers all possibilities
-    # rule 1 - create a tuple and apply min(). This also ensures that score always has a value
+    # rule 1 - create a tuple (or list or set) and apply min(). This also ensures that score always has a value
     score = min((red1, red2, blue1, blue2))
-    # rule 2
+    # rule 2 - the sum of any one red dice and any one blue dice is seven
     if red1 + blue1 == 7 or red1 + blue2 == 7 or red2 + blue1 == 7 or red2 + blue2 == 7:
         score = 7
-    # rule 3
+    # rule 3 - sum of any one red dice and any one blue dice is seven,
+    #          and the sum of the remaining red and blue dice is also seven
     if (red1 + blue1 == 7 and red2 + blue2 == 7) or (red1 + blue2 == 7 and red2 + blue1 == 7):
         score = 14
-    # rule 4
+    # rule 4 - the four dice are any permutation of (3,3,4,4),
     if (red1 == 3 and red2 == 3 and blue1 == 4 and blue2 == 4) or \
             (red1 == 3 and red2 == 4 and blue1 == 3 and blue2 == 4) or \
             (red1 == 3 and red2 == 4 and blue1 == 4 and blue2 == 3) or \

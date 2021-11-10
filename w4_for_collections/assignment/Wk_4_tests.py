@@ -1,5 +1,5 @@
 # Week 4 Assignment
-from assignments.week4.Nayonica_Ghosh_17752222_assignsubmission_file_.wk4_181103457_fixed    import *
+from assignments.week4.Devyani_Sharma_17752223_assignsubmission_file_.w4_VIVAAN    import *
 
 
 def test_signum():
@@ -80,29 +80,29 @@ with the previous version. If you attempt them I will mark your work,
 but you suffer no penalty for not doing them.
 """
 
-#
-# def test_mergen_short():
-#     """Also perhaps ('', '', 'a') and ('', 'b', 'ac')"""
-#     assert mergen_short('', '', '') == ''
-#     assert mergen_short('abc', 'd', 'ef') == 'ade'
-#     assert mergen_short('abc', 'de', 'fghi') == 'adfbeg'
-#     assert mergen_short('abc_', 'defg', 'hjkmn', 'pqr',
-#                         'stuv') == 'adhpsbejqtcfkru'
-#
-#
-# def test_mergen_long():
-#     """same comment as for _short()"""
-#     assert mergen_long('', '', '') == ''
-#     assert mergen_long('abc', 'd', 'ef') == 'adebfc'
-#     assert mergen_long('abc_', 'defg', 'hjkmn', 'pqr',
-#                        'stuv') == 'adhpsbejqtcfkru_gmvn'
-#
-#
-# def test_runup():
-#     result = runup('')  # ''
-#     assert result == (0, -1)
-#     result = runup('z')  # 'z'
-#     assert result == (0, 1)
-#     result = runup('ababcb')  # 'abc'
-#     assert result == (2, 3)
-#
+
+def test_mergen_short():
+    """Also perhaps ('', '', 'a') and ('', 'b', 'ac')"""
+    assert mergen_short('', '', '') == ''
+    assert mergen_short('abc', 'd', 'ef') == 'ade'
+    assert mergen_short('abc', 'de', 'fghi') == 'adfbeg'
+    assert mergen_short('abc_', 'defg', 'hjkmn', 'pqr',
+                        'stuv') == 'adhpsbejqtcfkru'
+
+
+def test_mergen_long():
+    """same comment as for _short()"""
+    assert mergen_long('', '', '') == ''
+    assert mergen_long('abc', 'd', 'ef') == 'adebfc'
+    assert mergen_long('abc_', 'defg', 'hjkmn', 'pqr',
+                       'stuv') == 'adhpsbejqtcfkru_gmvn'
+
+
+def test_runup():
+    result = runup('')  # ''
+    assert result == (0, -1)
+    result = runup('z')  # 'z'
+    assert result == (0, 1)
+    result = runup('ababcb')  # 'abc'
+    assert result == (2, 3)
+
