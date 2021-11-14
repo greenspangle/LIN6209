@@ -94,42 +94,42 @@ def num_seq_str_v1(an_int):
     no trailing comma or space at the end of the string. """
     result = ''  # will build return value as a string
     for i in range(1, an_int + 1):
-        result += str(i) + ','  # append next integer with trailing comma
-    # result contains required return value - PLUS a trailing comma
-    result = result[:-1]  # drop the trailing comma
+        result += str(i) + ', '  # append next integer with trailing comma+space
+    # result contains required return value - PLUS a trailing comma+space
+    result = result[:-2]  # drop the trailing comma+space
     return result
 
 
-def num_seq_str_v2a(an_int):
-    """Exactly the same pattern as v1, but entirely with lists"""
+def num_seq_str_v2(an_int):
+    """Same pattern as v1, but entirely with lists"""
     result = []  # will build return value as a list of strings
     for i in range(1, an_int + 1):
-        result.append(str(i) + ',')  # each element is an integer followed by a comma
+        result.append(str(i) + ', ')  # each element is an integer followed by a comma+space
     # all component parts of result are now assembled in list
     # use str.join() method to assemble list elements into a string
     result = ' '.join(result)
-    return result[:-1]  # and return result minus the trailing comma
+    return result[:-1]  # and return result minus the trailing comma+space
 
 
-def num_seq_str_v2b(an_int):
-    """Exactly the same pattern as v1, but entirely with lists"""
+def num_seq_str_v3(an_int):
+    """Same pattern as v1, but entirely with lists"""
     int_list = []  # first build the list of integers
     for i in range(1, an_int + 1):
         int_list.append(str(i))  # each element is an integer
     # all component parts of result are now assembled in list
-    # use str.join() method to assemble list elements into a string separated by comma-space
+    # use str.join() method to assemble list elements into a string separated by comma+space
     result_str = ", ".join(int_list)
     return result_str  # and return result
 
 
-def num_seq_str_v2c(an_int):
-    """Exactly the same pattern as 2b, but with a list comprehension"""
+def num_seq_str_v4(an_int):
+    """Same pattern as v3, but with a list comprehension"""
     int_list = [str(i) for i in range(1, an_int + 1)]
     # assemble list of integers into a string separated by comma-space and done
     return ', '.join(int_list)
 
 
-# I like v2c best as it's concise and to the point.
+# I like v4 best as it's concise but perhaps v1 is the easiest to understand?
 # best use v1 as that's the most 'obvious'
 num_seq_str = num_seq_str_v1
 
@@ -164,6 +164,14 @@ def num_seq_dict_v2(an_int):
 
 # the list comprehension is especially neat :-) but stick with the simpler v2
 num_seq_dict = num_seq_dict_v2
+
+
+def get_chars_set(filename):
+    with open(filename, 'r', encoding='utf_8') as f:
+        # assume the file is not too big to chomp in a single mouthful ....
+        contents = f.read()
+    # file contents are now in 'content', return it as a set
+    return set(contents)
 
 
 def count_chars(filename):
@@ -234,6 +242,7 @@ def count_and(filename):
     # file contents are now in 'content'.
     # As before, could use a 'for' or 'while' loop to iterate through file contents and count
     # but definitely always try and re-use existing software/functionality
+    content = content.lower()  # convert to lower case
     return content.count('and'), content.count(' and '), content.count(' and, ')
 
 
@@ -242,21 +251,15 @@ def count_words(filename):
     Read the file and return number of words in the file."""
     with open(filename, 'r', encoding='utf_8') as f:
         # assume the file is not too big to chomp in a single mouthful ....
-        contents = f.read()
-    # file contents are now in 'content'.
-    # use the helper function _count_words_in_str(a_str)
-    result = _count_words_in_str(contents)
-    return result
-
-
-def _count_words_in_str(a_str):
+        f_contents = f.read()
+    # file read and closed, contents now in f_contents.
     # replace all whitespace by true whitespace ' '
     for char in string.whitespace:
-        a_str.replace(char, ' ')
-    # split that string on spaces (default behaviour of split() method)
-    contents = a_str.split()
+        f_contents.replace(char, ' ')
+    # split on spaces (default behaviour of split() method)
+    f_contents = f_contents.split()
     # every word is an element in that list  so number of words is length of that list
-    return len(contents)
+    return len(f_contents)
 
 
 def char_frequency(filename):
@@ -302,6 +305,31 @@ def word_frequency(filename):
     return w_freq
 
 
+def average_word_length(filename):
+    """Return average length of the 'words' in the file"""
+    with open(filename, 'r', encoding='utf_8') as f:
+        # assume the file is not too big to chomp in a single mouthful ....
+        f_contents = f.read()
+        # file read and closed, contents now in f_contents.
+        # replace all whitespace by true whitespace ' '
+        for char in string.whitespace:
+            f_contents.replace(char, ' ')
+        # split on spaces (default behaviour of split() method)
+        f_words = f_contents.split()
+        # iterate through that list of words counting instances and their lengths
+        sum_words = 0
+        sum_lengths = 0
+        for word in f_words:
+            sum_words += 1
+            sum_lengths += len(word)
+        # calculate the average length
+        if sum_words == 0:  # check for division by zero
+            result = 0
+        else:
+            result = sum_lengths / sum_words
+        return result
+
+
 def text_analysis_01(filename):
     """The parameter is guaranteed to be the name of a text file encoded as utf-8. Read the file and return a tuple
     containing:
@@ -318,40 +346,68 @@ def text_analysis_01(filename):
     # open the file and read it's contents
     with open(filename, 'r', encoding='utf_8') as f:
         # assume the file is not too big to chomp in a single mouthful ....
-        contents = f.read()
-    # file contents are now in 'content'
+        f_contents = f.read()
+    # file read, closed, and contents now in f_content
 
     # count sentences
     s_count = 0
     s_end = {'.', '!', '?'}
     # count occurrences of {'.', '?', '!'} followed by space
-    for i in range(len(contents) - 1):
-        if contents[i] in s_end and contents[i + 1] == ' ':
+    for i in range(len(f_contents) - 1):
+        if f_contents[i] in s_end and f_contents[i + 1] == ' ':
             s_count += 1
-    # check end of sentence
-    if contents[-1] in s_end:
+    # if the last character at the end of the file is not .?! then add 1 to sentence count
+    if len(f_contents) > 0 and f_contents[-1] not in s_end and not f_contents[-1].isspace() :
         s_count += 1
 
-    # count words - have already done this so just call function
-    w_count = _count_words_in_str(contents)
+    # count words
+    w_count = 0
+    # replace all whitespace by true whitespace ' '
+    for char in string.whitespace:
+        f_contents.replace(char, ' ')
+    # replace all punctuation marks with space
+    for char in '!?.,:;':
+        f_contents.replace(char, ' ')
+    # split on spaces (default behaviour of split() method)
+    w_list = f_contents.split()
+    # every word is an element in that list  so number of words is length of that list
+    w_count = len(w_list)
 
     # count whitespace and non-whitespace characters
-    w_char = 0
-    w_char_not = 0
-    for char in contents:
+    wsp_char = 0
+    wsp_char_not = 0
+    for char in f_contents:
         if char not in string.whitespace:
-            w_char += 1
+            wsp_char_not += 1
         else:
-            w_char_not += 1
+            wsp_char += 1
 
+    # all done, return results
+    return s_count, w_count, wsp_char_not, wsp_char
 
-################################
 
 def write_Q(an_int, filename):
     """The parameters are guaranteed to be a positive integer **greater than zero** and a legal filename.
     Write the sequence of integers from 1 to an_int inclusive to a text file, with each integer separated
     from the next by the string ' ? ' (space, question mark, space). The return value should be the count
     of the total number of characters written to the file."""
+    # open file for write
+    with open(filename, 'w', encoding='utf-8') as f:
+        # iterate through the integers from 1 up to but not including an_int
+        # successively writing the integers etc to the file and counting the characters written
+        c_count = 0
+        for i in range(an_int):
+            # assemble a string to be written to file
+            i_str = str(i) + ' ? '
+            # write it to the file
+            f.write(i_str)
+            # update number of characters written
+            c_count += len(i_str)
+        # for the last integer, just write the integer, and update the counter
+        f.write(str(i))
+        c_count += len(str(i))
+        # and return the count of characters written
+        return c_count
 
 
 def write_ints(an_int, filename):
@@ -362,14 +418,27 @@ def write_ints(an_int, filename):
     `next_integer * next_integer`.
     All the integers in the same line are separated by a single space.
     No space is added at the beginning or the end of the line."""
-    pass
+    # open file for write
+    with open(filename, 'w', encoding='utf-8') as f:
+        # iterate through the integers from 0 up to an_int inclusive
+        for i in range(an_int + 1):
+            # for each successive i write a line to the file
+            # each line is the sequence of multiples of i from 1*i to i*i separated by spaces
+            for j in range(1, i):
+                # up to the last multiple write the value followed by space
+                f.write(str(i * j) + ' ')
+            # at the end of the line write i*i followed by newline
+            f.write(str(i * i) + '\n')
+        # and that's it done (leave the trailing newline in the file)
+    # no return value is specified so return None
+    return None
 
 
 # Section 2 - Extra Credit
-
+################################
 def adjacency(filename):
     """The parameter is guaranteed to be the name of a text file encoded as utf-8.
-    Read the file and return adictionary containing every word as a key.
+    Read the file and return a dictionary containing every word as a key.
     Associated with each key are two lists:
         * The words that have occurred immediately **before** the key word in `filename`
         * The words that have occurred immediately **after** the key word in `filename`"""

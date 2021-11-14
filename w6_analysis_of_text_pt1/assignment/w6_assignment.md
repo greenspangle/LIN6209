@@ -160,7 +160,7 @@ parameter value | return value
 **Hints:**\
 Same problem as the previous function except this time you need to return a `set()`.
 
-## num_seq_dict_(an_int)
+## num_seq_dict(an_int)
 
 The parameter is guaranteed to be a positive integer greater than zero. Return a dictionary containing the
 integers 1 to an_int as the keys of the dictionary. The value associated with each key should be the string
