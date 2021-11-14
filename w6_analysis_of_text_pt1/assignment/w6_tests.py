@@ -1,6 +1,6 @@
 # Week 4 Assignment
 import w6_assignment_solution as tutor
-from w6_assignment_solution import *
+from assignments.week6.submissions.Julieta_Gil_Loizaga_17820966_assignsubmission_file_.w6_190245566 import *
 from w6_tests_helper_functions import datafile
 
 
@@ -71,6 +71,15 @@ def test_num_seq_set():
     assert num_seq_set(11) == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
     assert num_seq_set(0) == set()
     assert num_seq_set(-9) == set()
+
+
+# if 'num_seq_dict_' in locals():
+#     num_seq_dict = num_seq_dict_
+
+try:
+    num_seq_dict = num_seq_dict_
+except NameError:
+    pass
 
 
 def test_num_seq_dict():
@@ -178,7 +187,5 @@ def test_write_ints():
             for s_line in sf:  # for each line is students file
                 t_line = tf.readline()  # read a line of tutors file
                 assert s_line == t_line  # and test that they are equal
-
-
 
 ## end ##
