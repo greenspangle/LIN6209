@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+ <head>            
+  <style>/* Reworked by IntelliJ Team The MIT License (MIT) Copyright (c) JetBrains Adapted from https://github.com/sindresorhus/github-markdown-css The MIT License (MIT) Copyright (c) Sindre Sorhus &lt;sindresorhus@gmail.com&gt; (sindresorhus.com) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ @font-face { font-family: octicons-anchor; src: url(data:font/woff;charset=utf-8;base64,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) format('woff'); } body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, freesans, sans-serif; font-size: 14px; line-height: 1.6; word-wrap: break-word; margin: 0 30px; } strong { font-weight: bold; } img { border: 0; } input { color: inherit; font: inherit; margin: 0; line-height: normal; } html input[disabled] { cursor: default; } input[type="checkbox"] { box-sizing: border-box; padding: 0; } body * { box-sizing: border-box; } input { font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; } a { text-decoration: none; } a:hover, a:active { text-decoration: underline; } hr { height: 1px; padding: 0; margin: 20px 0; border: 0 none; } hr:before { display: table; content: ""; } hr:after { display: table; clear: both; content: ""; } blockquote { margin: 0; } ul, ol { padding: 0; margin-top: 0; margin-bottom: 0; } ol ol, ul ol { list-style-type: lower-roman; } ul ul ol, ul ol ol, ol ul ol, ol ol ol { list-style-type: lower-alpha; } dd { margin-left: 0; } .octicon { font: normal normal normal 16px/1 octicons-anchor; display: inline-block; text-decoration: none; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .octicon-link:before { content: '\f05c'; } .markdown-body &gt; *:first-child { margin-top: 0 !important; } .markdown-body &gt; *:last-child { margin-bottom: 0 !important; } .anchor { position: absolute; top: 0; left: 0; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; } .anchor:focus { outline: none; } h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; } h1 .octicon-link, h2 .octicon-link, h3 .octicon-link, h4 .octicon-link, h5 .octicon-link, h6 .octicon-link { display: none; color: #000; vertical-align: middle; } h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; } h1:hover .anchor .octicon-link, h2:hover .anchor .octicon-link, h3:hover .anchor .octicon-link, h4:hover .anchor .octicon-link, h5:hover .anchor .octicon-link, h6:hover .anchor .octicon-link { display: inline-block; } h1 { font-size: 2.2em; padding-top: 0.6em; } h1 .anchor { line-height: 1; } h2 { font-size: 1.8em; line-height: 1.2; padding-top: 0.6em; } h2 .anchor { line-height: 1.2; } h3 { font-size: 1.3em; line-height: 1; padding-top: 0.6em; } h3 .anchor { line-height: 1.2; } h4 { font-size: 1em; } h4 .anchor { line-height: 1.2; } h5 { font-size: 1em; } h5 .anchor { line-height: 1.1; } h6 { font-size: 1em; } h6 .anchor { line-height: 1.1; } p, blockquote, ul, ol, dl, table, pre { margin-top: 16px; margin-bottom: 16px; } ul, ol { padding-left: 2em; } ul ul, ul ol, ol ol, ol ul { margin-top: 0; margin-bottom: 0; } li &gt; p { margin-top: 0; margin-bottom: 0; } dl { padding: 0; } dl dt { padding: 0; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; } dl dd { padding: 0 16px; margin-bottom: 16px; } blockquote { padding: 10px 10px 10px 16px; border-left: 2px solid; border-radius: 0 3px 3px 0; } blockquote &gt; :first-child { margin-top: 0; } blockquote &gt; :last-child { margin-bottom: 0; } table { display: block; width: 100%; overflow: auto; word-break: normal; border-collapse: collapse; border-spacing: 0; font-size: 1em; } table th { font-weight: bold; } table th, table td { padding: 6px 13px; background: transparent; } table tr { border-top: 1px solid; } img { max-width: 100%; box-sizing: border-box; } code { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } pre &gt; code { padding: 0; margin: 0; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0; } .highlight { margin-bottom: 16px; } .highlight pre, pre { font: 0.85em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 16px; overflow: auto; line-height: 1.45; border-radius: 3px; } pre code { display: inline; max-width: initial; padding: 0; margin: 0; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0; } pre code:before, pre code:after { content: normal; } kbd { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } .task-list-item { list-style-type: none; } .task-list-item + .task-list-item { margin-top: 3px; } .task-list-item input { margin: 0 0.35em 0.25em -0.6em; vertical-align: middle; } :checked + .radio-label { z-index: 1; position: relative; } span.user-del { text-decoration: line-through; } ::-webkit-scrollbar { width: 6px; height: 6px; } ::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; } ::-webkit-scrollbar-track:vertical { -webkit-box-shadow: -1px 0 0 #ededed; } ::-webkit-scrollbar-track { background-color: transparent; } ::-webkit-scrollbar { width: 6px; } </style>
+  <style>body { background-color: rgba(255, 255, 255, 255.0); font-size: 19px !important; } body, p, blockquote, ul, ol, dl, table, pre, code, tr { color: rgba(8, 8, 8, 255.0); } a { color: rgba(36, 112, 179, 255.0); } table td, table th { border: 1px solid rgba(205, 205, 205, 255.0); } hr { background-color: rgba(205, 205, 205, 255.0); } kbd, tr { border: 1px solid rgba(205, 205, 205, 255.0); } h6 { color: rgba(153, 153, 153, 255.0); } blockquote { border-left: 2px solid rgba(36, 112, 179, 0.4); } ::-webkit-scrollbar-thumb { background-color: rgba(115, 115, 115, 0.2); } blockquote, code, pre { background-color: rgba(212, 222, 231, 0.24705882352941178); }</style>
+ </head> 
+ <body>
+  <div md-src-pos="0..8502">
+   <h1 md-src-pos="0..27">W8 Assignment parts 1 &amp; 2</h1>
+   <p md-src-pos="29..90"><span md-src-pos="29..90">The final two assignments are a software development project.</span></p>
+   <p md-src-pos="92..270"><span md-src-pos="92..200">I recommend that they are both about the same project idea as that will be less work for you and will almost</span> <span md-src-pos="201..270">certainly allow you more opportunities to explore your own interests.</span></p>
+   <p md-src-pos="272..487"><span md-src-pos="272..336">In the first part of the assignment you will define the project,</span> <span md-src-pos="337..379">explain the topics/questions you intend to</span> <span md-src-pos="380..388">explore,</span> <span md-src-pos="389..487">and give outline details about how you intend to use Python to explore your topic computationally.</span></p>
+   <p md-src-pos="489..658"><span md-src-pos="489..563">In the second part of the assignment you will write the programs you need,</span> <span md-src-pos="564..594">collect the data resources you</span> <span md-src-pos="595..608">will explore,</span> <span md-src-pos="609..658">and write a project report summarising your work.</span></p>
+   <p md-src-pos="660..827"><strong md-src-pos="660..673">IMPORTANT</strong>: <span md-src-pos="675..751">Your assignment will be judged and marked as a software development project.</span> <span md-src-pos="752..766">It will not be</span> <span md-src-pos="767..827">judged on the linguistic concepts you propose to investigate</span></p>
+   <ul md-src-pos="829..838">
+    <li class="task-list-item" md-src-pos="829..838"><input type="checkbox" class="task-list-item-checkbox" disabled>text</li>
+   </ul>
+   <h2 md-src-pos="840..857">Project Part 1</h2>
+   <p md-src-pos="859..1159"><span md-src-pos="859..965">A project development proposal describing the ideas and objectives you intend to explore and an outline of</span> <span md-src-pos="966..994">the software you will build.</span> <span md-src-pos="995..1023">As well as descriptive text,</span> <span md-src-pos="1024..1071">the document you submit for this assignment can</span> <span md-src-pos="1072..1089">include diagrams,</span> <span md-src-pos="1090..1096">lists,</span> <span md-src-pos="1097..1106">sketches,</span> <span md-src-pos="1107..1117">and so on.</span> <span md-src-pos="1118..1158">It should include the following sections</span>:</p>
+   <ol md-src-pos="1161..1727">
+    <li md-src-pos="1161..1181">The project title</li>
+    <li md-src-pos="1182..1246">A description of the project and the question it will explore</li>
+    <li md-src-pos="1247..1727">An outline of how you intend to approach the project:
+     <ol md-src-pos="1307..1727">
+      <li md-src-pos="1307..1352">The data and text resources you will need</li>
+      <li md-src-pos="1356..1424">Where you will get free access to sufficient quantities of data?</li>
+      <li md-src-pos="1428..1554">The functionality of the application you will create, perhaps with a tentative list of the functions you will build</li>
+      <li md-src-pos="1558..1628">How you will you test your software to confirm it works correctly?</li>
+      <li md-src-pos="1632..1727">The software tools you will use e.g. IDLE &amp; MS Word or Jupyter &amp; MarkDown or something else</li>
+     </ol></li>
+   </ol>
+   <p md-src-pos="1729..1743"><span md-src-pos="1729..1743">250-500 words.</span></p>
+   <h2 md-src-pos="1745..1762">Project Part 2</h2>
+   <p md-src-pos="1764..1799"><span md-src-pos="1764..1798">Your project report should include</span>:</p>
+   <ol md-src-pos="1801..2430">
+    <li md-src-pos="1801..1871">The application you built (regardless of whether it works or not!).</li>
+    <li md-src-pos="1872..1893">The code you wrote</li>
+    <li md-src-pos="1894..1914">The data you used</li>
+    <li md-src-pos="1915..1942">The results you obtained</li>
+    <li md-src-pos="1943..2430">A project development diary describing your work on the creation of this application. This will often (but not always) include your work on:
+     <ul md-src-pos="2093..2430">
+      <li md-src-pos="2093..2138">analysis = breaking the problem into parts</li>
+      <li md-src-pos="2142..2235">designs = descriptions of functions, what they will do, how they will work with each other</li>
+      <li md-src-pos="2239..2254">false starts</li>
+      <li md-src-pos="2258..2284">stuff that did not work</li>
+      <li md-src-pos="2288..2310">stuff that did work</li>
+      <li md-src-pos="2314..2324">testing</li>
+      <li md-src-pos="2328..2351">changes of direction</li>
+      <li md-src-pos="2355..2365">results</li>
+      <li md-src-pos="2369..2420">reflections on work done, ideas for improvements</li>
+      <li md-src-pos="2424..2430">...</li>
+     </ul></li>
+   </ol>
+   <p md-src-pos="2432..2736"><strong md-src-pos="2432..2445">IMPORTANT</strong>: <span md-src-pos="2447..2505">Project diaries are NOT written at the end of the project.</span> <span md-src-pos="2506..2534">Project diaries are verbatim</span> <span md-src-pos="2535..2582">records of the application development process.</span> <span md-src-pos="2583..2629">They are a contemporaneous record of thoughts,</span> <span md-src-pos="2630..2639">ideas and</span> <span md-src-pos="2640..2673">events as they actually happened.</span> <span md-src-pos="2674..2699">They are not a dressed-up</span> '<span md-src-pos="2701..2715">project report</span>' <span md-src-pos="2717..2736">version of reality.</span></p>
+   <p md-src-pos="2738..2755"><span md-src-pos="2738..2755">About 2000 words.</span></p>
+   <h2 md-src-pos="2757..2781">Example Project Ideas</h2>
+   <p md-src-pos="2783..2821"><span md-src-pos="2783..2821">Just some thoughts to get you started.</span></p>
+   <h3 md-src-pos="2823..2842">'Brexit' trends</h3>
+   <p md-src-pos="2844..2918"><span md-src-pos="2844..2874">Frequency analysis of the word</span> '<span md-src-pos="2876..2882">Brexit</span>' <span md-src-pos="2884..2918">over time in various publications.</span></p>
+   <h3 md-src-pos="2920..2975">The vocabulary of the Sherlock Holmes novels of ACD</h3>
+   <p md-src-pos="2977..3001"><span md-src-pos="2977..3000">Word frequency analysis</span>:</p>
+   <ul md-src-pos="3003..3072">
+    <li md-src-pos="3003..3018">In all novels</li>
+    <li md-src-pos="3019..3045">In each individual novel</li>
+    <li md-src-pos="3046..3072">How it changed over time</li>
+   </ul>
+   <h3 md-src-pos="3074..3128">Vocabulary Comparisons over time e.g. 1850 vs 1900</h3>
+   <p md-src-pos="3130..3232"><span md-src-pos="3130..3232">Choose a few novels by a few authors that were popular in those time periods and compare vocabularies.</span></p>
+   <h3 md-src-pos="3234..3284">Most frequent words occurring near a character</h3>
+   <p md-src-pos="3286..3504"><span md-src-pos="3286..3298">For instance</span>: <span md-src-pos="3300..3347">In the Sherlock Holmes novels which words occur</span> '<span md-src-pos="3349..3353">near</span>' <span md-src-pos="3355..3377">Holmes and which occur</span> '<span md-src-pos="3379..3383">near</span>' <span md-src-pos="3385..3392">Watson.</span> <span md-src-pos="3393..3418">What does comparing those</span> '<span md-src-pos="3420..3426">nearby</span>' <span md-src-pos="3428..3499">words tell us about the relative roles of those characters in the novel</span>( <span md-src-pos="3501..3502">s</span>)<span md-src-pos="3503..3504">.</span></p>
+   <p md-src-pos="3506..3702"><span md-src-pos="3506..3530">Take care with sentence,</span> <span md-src-pos="3531..3564">paragraph and chapter boundaries.</span> <span md-src-pos="3565..3571">If the</span> '<span md-src-pos="3573..3579">nearby</span>' <span md-src-pos="3581..3606">word metric is based on a</span> <span md-src-pos="3607..3613">simple</span> '<span md-src-pos="3615..3642">number of intervening words</span>' <span md-src-pos="3644..3653">distance,</span> <span md-src-pos="3654..3655">a</span> '<span md-src-pos="3657..3663">nearby</span>' <span md-src-pos="3665..3702">word might be in a different chapter.</span></p>
+   <p md-src-pos="3704..3797"><span md-src-pos="3704..3749">Perhaps do the same with some romance novels,</span> <span md-src-pos="3750..3776">of different time periods,</span> <span md-src-pos="3777..3797">of different genres?</span></p>
+   <h3 md-src-pos="3799..3825">News Media Comparisons</h3>
+   <p md-src-pos="3827..3917"><span md-src-pos="3827..3917">Choose a topic and compare the language used to report that topic by different news media.</span></p>
+   <p md-src-pos="3919..4025"><span md-src-pos="3919..3993">For instance Times vs Telegraph vs Guardian vs Daily Mail vs Sun vs Mirror</span> (<span md-src-pos="3995..4024">websites or printed editions?</span>)</p>
+   <h3 md-src-pos="4027..4052">Most likely next word</h3>
+   <p md-src-pos="4054..4223"><span md-src-pos="4054..4110">For a chosen author analyse a collection of their texts.</span> <span md-src-pos="4111..4128">Build a next_word</span>(<span md-src-pos="4129..4135">a_word</span>) <span md-src-pos="4137..4162">function that returns the</span> <span md-src-pos="4163..4223">the word most likely to follow a_word in that authors works.</span></p>
+   <p md-src-pos="4225..4286"><span md-src-pos="4225..4286">Generalise this so that it works for any collection of texts.</span></p>
+   <h3 md-src-pos="4288..4320">Function = pluralize(a_word)</h3>
+   <p md-src-pos="4322..4495"><span md-src-pos="4322..4373">Build a function that returns the plural of a_word.</span> <span md-src-pos="4374..4427">Try to deal with as many irregular words as possible.</span> <span md-src-pos="4428..4463">What if a_word is already a plural?</span> <span md-src-pos="4464..4495">What does the function do then?</span></p>
+   <h3 md-src-pos="4497..4527">Function = stemmer(a_word)</h3>
+   <p md-src-pos="4529..4637"><span md-src-pos="4529..4582">Build a function that returns the root form of a_word</span> (<span md-src-pos="4584..4618">you decide what that means exactly</span>)<span md-src-pos="4619..4620">.</span> <span md-src-pos="4621..4636">So for instance</span>:</p>
+   <table md-src-pos="4639..4723">
+    <thead>
+     <tr md-src-pos="4639..4649">
+      <th md-src-pos="4639..4643">word</th>
+      <th align="right" md-src-pos="4644..4648">root</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="4662..4677">
+      <td md-src-pos="4662..4670">coloured</td>
+      <td align="right" md-src-pos="4671..4677">colour</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="4678..4703">
+      <td md-src-pos="4678..4692">industrialised</td>
+      <td align="right" md-src-pos="4693..4703">industrial</td>
+     </tr>
+     <tr md-src-pos="4704..4723">
+      <td md-src-pos="4704..4714">industrial</td>
+      <td align="right" md-src-pos="4715..4723">industry</td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="4725..4932"><span md-src-pos="4725..4803">This is a very useful feature to have when searching texts and text databases.</span> <span md-src-pos="4804..4823">In that context the</span> <span md-src-pos="4824..4907">correctness of the function is judged on how effectively it produces the best word,</span> <span md-src-pos="4908..4917">or words,</span> <span md-src-pos="4918..4932">for searching.</span></p>
+   <p md-src-pos="4934..5078"><span md-src-pos="4934..4971">Much work has been done on this topic</span> (<span md-src-pos="4973..4984">for example</span>: <span md-src-pos="4986..4993">Porter,</span> <span md-src-pos="4994..5004">about 1980</span>)<span md-src-pos="5005..5006">.</span> <span md-src-pos="5007..5039">Create your own version and then</span> <span md-src-pos="5040..5078">compare it to others and then improve.</span></p>
+   <h3 md-src-pos="5080..5109">Function = tokenize(text)</h3>
+   <p md-src-pos="5111..5283"><span md-src-pos="5111..5180">Build a function that returns a list of the individual words in text,</span> <span md-src-pos="5181..5198">minus any spaces,</span> <span md-src-pos="5199..5211">punctuation,</span> <span md-src-pos="5212..5215">and</span> <span md-src-pos="5216..5221">other</span> '<span md-src-pos="5223..5230">special</span>' <span md-src-pos="5232..5240">symbols.</span> <span md-src-pos="5241..5283">Hyphenation needs to be treated carefully.</span></p>
+   <p md-src-pos="5285..5434"><span md-src-pos="5285..5354">Many places and other objects have names that are more than one word.</span> <span md-src-pos="5355..5359">Also</span> '<span md-src-pos="5361..5372">Her Majesty</span>'<span md-src-pos="5373..5374">,</span> '<span md-src-pos="5376..5388">Armed Forces</span>'<span md-src-pos="5389..5390">,</span> ' <span md-src-pos="5393..5409">Internal Revenue</span>'<span md-src-pos="5410..5411">,</span> '<span md-src-pos="5413..5433">carbon tetrachloride</span>'</p>
+   <h3 md-src-pos="5436..5466">Function = sentiment(text)</h3>
+   <p md-src-pos="5468..5731"><span md-src-pos="5468..5470">If</span> '<span md-src-pos="5472..5476">text</span>' <span md-src-pos="5478..5559">is a product review is it a positive product review or a negative product review?</span> <span md-src-pos="5560..5572">Is the given</span> <span md-src-pos="5573..5625">number of stars in agreement with the language used?</span> <span md-src-pos="5626..5667">What to do with reviews that say nothing,</span> <span md-src-pos="5668..5680">perhaps even</span> <span md-src-pos="5681..5699">literally nothing.</span> <span md-src-pos="5700..5731">How many stars should they get?</span></p>
+   <p md-src-pos="5733..5803"><span md-src-pos="5733..5757">Do the same with tweets.</span> <span md-src-pos="5758..5803">Do positive tweets outnumber negative tweets?</span></p>
+   <h3 md-src-pos="5805..5837">MarkDown - numbered headings</h3>
+   <p md-src-pos="5839..5944"><span md-src-pos="5839..5897">There is no feature in MarkDown to have headings numbered.</span> <span md-src-pos="5898..5944">Create a function that adds numbered headings.</span></p>
+   <table md-src-pos="5946..6156">
+    <thead>
+     <tr md-src-pos="5946..5963">
+      <th md-src-pos="5946..5954">MarkDown</th>
+      <th md-src-pos="5955..5963">Numbered</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="5982..6029">
+      <td md-src-pos="5982..6002"># Head<br> ## Head</td>
+      <td md-src-pos="6003..6029"># 1 Head<br> ## 1.1 Head</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="6030..6156">
+      <td md-src-pos="6030..6086"># Head_a <br> # Head_b <br> ## Head_c <br> ## Head_d</td>
+      <td md-src-pos="6087..6156"># 1 Head_a <br> # 2 Head_b <br> ## 2.1 Head_c <br> ## 2.2 Head_d</td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="6158..6354"><span md-src-pos="6158..6238">Consider options to put the heading number after tha heading rather than before,</span> <span md-src-pos="6239..6266">or to turn the hierarchical</span> <span md-src-pos="6267..6293">numbering style on and off</span> (<span md-src-pos="6295..6352">so that all sub-headings under superior head start from 1</span>)<span md-src-pos="6353..6354">.</span></p>
+   <h3 md-src-pos="6356..6379">Concordance Builder</h3>
+   <p md-src-pos="6381..6412"><span md-src-pos="6381..6412">Build a concordance for a book.</span></p>
+   <h3 md-src-pos="6414..6448">Function = sound_alike(a_word)</h3>
+   <p md-src-pos="6450..6720"><span md-src-pos="6450..6462">Alternative,</span> <span md-src-pos="6463..6472">perverse,</span> <span md-src-pos="6473..6493">spellings of a_word.</span> <span md-src-pos="6494..6506">For example,</span> <span md-src-pos="6507..6531">alternative spellings of</span> '<span md-src-pos="6533..6537">fish</span>' <span md-src-pos="6539..6542">are</span> '<span md-src-pos="6544..6549">ghoti</span>' (<span md-src-pos="6552..6554">gh</span> <span md-src-pos="6555..6556">=</span> <span md-src-pos="6557..6560">/f/</span> <span md-src-pos="6561..6574">as in enough,</span> <span md-src-pos="6575..6576">o</span> <span md-src-pos="6577..6578">=</span> <span md-src-pos="6579..6582">/i/</span> <span md-src-pos="6583..6595">as in women,</span> <span md-src-pos="6596..6599">ti=</span> <span md-src-pos="6600..6604">/sh/</span> <span md-src-pos="6605..6617">as in nation</span>) <span md-src-pos="6619..6622">and</span> '<span md-src-pos="6624..6628">fici</span>' (<span md-src-pos="6631..6640">the sound</span> <span md-src-pos="6641..6647">«fish»</span> <span md-src-pos="6648..6665">is always spelled</span> <span md-src-pos="6666..6672">«fici»</span> <span md-src-pos="6673..6719">in words whose base has more than one syllable</span>)</p>
+   <pre><code md-src-pos="6722..6872">Dearest creature in Creation,
+Studying English pronunciation,
+I will teach you in my verse
+Sounds like corpse, corps, horse and worse.
+</code></pre>
+   <p md-src-pos="6874..6902"><a href="http://spellingsociety.org/" md-src-pos="6874..6901">http://spellingsociety.org/</a><span md-src-pos="6901..6902">#</span></p>
+   <h3 md-src-pos="6904..6932">Story Generator - mark I</h3>
+   <p md-src-pos="6934..7177"><span md-src-pos="6934..6990">The program asks for inputs such as the name of a place,</span> <span md-src-pos="6991..7001">an action,</span> <span md-src-pos="7002..7015">an adjective,</span> <span md-src-pos="7016..7030">a preposition,</span> <span md-src-pos="7031..7039">a proper</span> <span md-src-pos="7040..7045">noun,</span> <span md-src-pos="7046..7050">etc.</span> <span md-src-pos="7051..7084">Once all the inputs are in place,</span> <span md-src-pos="7085..7145">they are inserted into some ready-made strings and assembled</span> <span md-src-pos="7146..7177">into a pre-made story template.</span></p>
+   <p md-src-pos="7179..7267"><span md-src-pos="7179..7241">Perhaps have multiple templates and ask the user to select the</span> '<span md-src-pos="7243..7247">type</span>' <span md-src-pos="7249..7267">of story required.</span></p>
+   <h3 md-src-pos="7269..7298">Story Generator - mark II</h3>
+   <p md-src-pos="7300..7324"><span md-src-pos="7300..7323">The program starts with</span>:</p>
+   <ul md-src-pos="7326..7479">
+    <li md-src-pos="7326..7412">ready-made collections of different word types: verbs, nouns, adjectives, and so on.</li>
+    <li md-src-pos="7413..7445">rules for combining word types</li>
+    <li md-src-pos="7446..7479">template strings and storylines</li>
+   </ul>
+   <p md-src-pos="7481..7606"><span md-src-pos="7481..7538">The program prompts the user to enter a series of inputs.</span> <span md-src-pos="7539..7587">These can be particular adjectives prepositions,</span> <span md-src-pos="7588..7594">verbs,</span> <span md-src-pos="7595..7601">nouns,</span> <span md-src-pos="7602..7606">etc.</span></p>
+   <p md-src-pos="7608..7737"><span md-src-pos="7608..7652">Once all the inputs are in place the inputs,</span> <span md-src-pos="7653..7659">rules,</span> <span md-src-pos="7660..7668">strings,</span> <span md-src-pos="7669..7716">and templates are combined with some randomness</span> <span md-src-pos="7717..7737">to generate a story.</span></p>
+   <h3 md-src-pos="7739..7765">35. Plagiarism Checker</h3>
+   <p md-src-pos="7767..8087"><span md-src-pos="7767..7829">Content writing is one of the most prolific online businesses.</span> <span md-src-pos="7830..7875">The market lacks a free tool that can be used</span> <span md-src-pos="7876..7913">to check for plagiarism in documents.</span> <span md-src-pos="7914..7978">You can use a natural language processing library along with the</span> <span md-src-pos="7979..8087">Google search API to create a program that searches the first few pages of Google and checks for plagiarism.</span></p>
+   <h3 md-src-pos="8089..8110">email spam filter</h3>
+   <p md-src-pos="8112..8289"><span md-src-pos="8112..8155">Lots of online material to get you started.</span> <span md-src-pos="8156..8218">Many spam filters rely on Bayesian statistics which is not too</span> <span md-src-pos="8219..8289">difficult but is mathematical and would be yet another thing to learn.</span></p>
+   <h3 md-src-pos="8291..8305">More ideas</h3>
+   <p md-src-pos="8307..8489"><span md-src-pos="8307..8328">Breakfast Experiments</span> <a href="https://languagelog.ldc.upenn.edu/nll/index.php?s=%22breakfast%20experiment%22" md-src-pos="8329..8489">https://languagelog.ldc.upenn.edu/nll/index.php?s=%22breakfast%20experiment%22</a></p>
+   <p md-src-pos="8491..8502"><span md-src-pos="8491..8494">===</span> <span md-src-pos="8495..8498">end</span> <span md-src-pos="8499..8502">===</span></p>
+  </div>
+ </body>
+</html>
