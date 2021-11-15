@@ -12,11 +12,11 @@ In the second part of the assignment you will write the programs you need, colle
 will explore, and write a project report summarising your work.
 
 **IMPORTANT**: Your assignment will be judged and marked as a software development project. It will not be
-judged on the linguistic concepts you propose to investigate 
+judged on the linguistic concepts you propose to investigate
 
 -[ ] text
 
-### Project Part 1
+## Project Part 1
 
 A project development proposal describing the ideas and objectives you intend to explore and an outline of
 the software you will build. As well as descriptive text, the document you submit for this assignment can
@@ -31,11 +31,10 @@ include diagrams, lists, sketches, and so on. It should include the following se
        you will build
     4. How you will you test your software to confirm it works correctly?
     5. The software tools you will use e.g. IDLE & MS Word or Jupyter & MarkDown or something else
-4. An outline project plan
 
-About 500 words or two sides of A4.
+250-500 words.
 
-### Project Part 2
+## Project Part 2
 
 Your project report should include:
 
@@ -64,7 +63,7 @@ About 2000 words.
 
 ## Example Project Ideas
 
-Just some thoughts to get you started
+Just some thoughts to get you started.
 
 ### 'Brexit' trends
 
@@ -92,6 +91,12 @@ Take care with sentence, paragraph and chapter boundaries. If the 'nearby' word 
 simple 'number of intervening words' distance, a 'nearby' word might be in a different chapter.
 
 Perhaps do the same with some romance novels, of different time periods, of different genres?
+
+### News Media Comparisons
+
+Choose a topic and compare the language used to report that topic by different news media.
+
+For instance Times vs Telegraph vs Guardian vs Daily Mail vs Sun vs Mirror (websites or printed editions?)
 
 ### Most likely next word
 
@@ -137,7 +142,7 @@ literally nothing. How many stars should they get?
 
 Do the same with tweets. Do positive tweets outnumber negative tweets?
 
-### MarkDown extension - numbered headings
+### MarkDown - numbered headings
 
 There is no feature in MarkDown to have headings numbered. Create a function that adds numbered headings.
 
@@ -152,12 +157,6 @@ numbering style on and off (so that all sub-headings under superior head start f
 ### Concordance Builder
 
 Build a concordance for a book.
-
-### News Media Comparisons
-
-Choose a topic and compare the language used to report that topic by different news media.
-
-For instance Times vs Telegraph vs Guardian vs Daily Mail vs Sun vs Mirror (websites or printed editions?)
 
 ### Function = sound_alike(a_word)
 
