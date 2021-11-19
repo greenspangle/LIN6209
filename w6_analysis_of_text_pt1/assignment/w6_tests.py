@@ -1,6 +1,7 @@
-# Week 4 Assignment
+# Week 6 Assignment
 import w6_assignment_solution as tutor
-from assignments.week6.submissions.Julieta_Gil_Loizaga_17820966_assignsubmission_file_.w6_190245566 import *
+from assignments.week6.submissions.Yash_Shah_17820963_assignsubmission_file_.w6_190349635_LIN6209_6     import  *
+# from w6_assignment_solution import *
 from w6_tests_helper_functions import datafile
 
 
@@ -38,11 +39,11 @@ def test_score_4():
 
 
 def test_fizzbuzz():
-    assert fizzbuzz(1) == '1'
-    assert fizzbuzz(5) == 'Buzz'
-    assert fizzbuzz(33) == 'Fizz'
-    assert fizzbuzz(45) == 'FizzBuzz'
-    assert fizzbuzz(13) == '13'
+    assert fizzbuzz(1).lower() == '1'
+    assert fizzbuzz(5).lower() == 'buzz'
+    assert fizzbuzz(33).lower() == 'fizz'
+    assert fizzbuzz(45).lower() == 'fizzbuzz'
+    assert fizzbuzz(13).lower() == '13'
 
 
 def test_num_seq_str():
@@ -67,16 +68,10 @@ def test_num_seq_set():
     assert num_seq_set(11) == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
 
 
-# if 'num_seq_dict_' in locals():
-#     num_seq_dict = num_seq_dict_
-
-try:
-    num_seq_dict = num_seq_dict_
-except NameError:
-    pass
-
-
 def test_num_seq_dict():
+    global num_seq_dict
+    if 'num_seq_dict_' in globals():  # original assignment had typo with final underscore
+        num_seq_dict = globals()['num_seq_dict_']  # test that if it is present
     assert num_seq_dict(1) == {1: '1'}
     assert num_seq_dict(2) == {1: '1', 2: '2'}
     assert num_seq_dict(3) == {1: '1', 2: '2', 3: 'Fizz'}
@@ -101,11 +96,14 @@ def test_count_chars():
     assert count_chars(datafile('\t\n\n')) == 3
 
 
-def test_count_Q():
-    assert count_Q(datafile('')) == 0
-    assert count_Q(datafile('?-?')) == 2
-    assert count_Q(datafile('?-?-?')) == 3
-    assert count_Q(datafile('any???thing')) == 3
+def test_count_q():
+    global count_q
+    if 'count_Q' in globals():  # original assignment used capital Q
+        count_q = globals()['count_Q']  # test that name if it is present
+    assert count_q(datafile('')) == 0
+    assert count_q(datafile('?-?')) == 2
+    assert count_q(datafile('?-?-?')) == 3
+    assert count_q(datafile('any???thing')) == 3
 
 
 def test_count_and():
@@ -136,20 +134,24 @@ def test_word_frequency():
     assert word_frequency(datafile('abc     123    \n\t    abc xyz')) == {'abc': 2, '123': 1, 'xyz': 1}
 
 
-def test_average_word_length():
-    assert average_word_length(datafile('')) == 0
-    assert average_word_length(datafile('abc def xyz')) == 3
-    assert average_word_length(datafile('Andover and shandy')) == (16 / 3)
+if 'average_word_length' in globals():  # this was omitted from HTML version !
+    def test_average_word_length():
+        assert average_word_length(datafile('')) == 0
+        assert average_word_length(datafile('abc def xyz')) == 3
+        assert average_word_length(datafile('Andover and shandy')) == (16 / 3)
 
 
 def test_text_analysis_01():
     assert text_analysis_01(datafile('abc')) == (1, 1, 3, 0)
     assert text_analysis_01(datafile('\t \t \n')) == (0, 0, 0, 5)
-    assert text_analysis_01(datafile('abc def. \tdef?\tghi jk!')) == (3, 5, 17, 5)
+    assert text_analysis_01(datafile('abc def. \tdef\tghi jk')) == (2, 5, 15, 5)
     assert text_analysis_01(datafile('')) == (0, 0, 0, 0)
 
 
-def test_write_Q():
+def test_write_q():
+    global write_q
+    if 'write_Q' in globals():  # original assignment used capital Q
+        write_q = globals()['write_Q']  # test that name if it is present
     # name and create the two output files, one by student, one by tutor
     s_file = 's_file.txt'
     t_file = 't_file.txt'
@@ -157,13 +159,12 @@ def test_write_Q():
     print()  # this just keeps output looking tidy
     for i in [1, 3, 5]:
         print('Testing for an_int =', i)
-        write_Q(i, s_file)
-        tutor.write_Q(i, t_file)
+        write_q(i, s_file)
+        tutor.write_q(i, t_file)
         with open(s_file) as sf, open(t_file) as tf:
             # read and compare the successive lines of both files
             s_line = sf.readline()  # read a line of tutors file
             t_line = tf.readline()  # read a line of tutors file
-            pass  # ToDo fix my code!!!
             assert s_line == t_line  # and test that they are equal
             # for s_line in sf:  # for each line in students file
             #     t_line = tf.readline()  # read a line of tutors file
@@ -177,14 +178,18 @@ def test_write_ints():
     t_file = 't_file.txt'
     # run the test for various integer values
     print()  # this just keeps output looking tidy
-    for i in [0, 1, 2, 5]:
+    for i in [1, 2, 5]:
         print('Testing for an_int =', i)
         write_ints(i, s_file)
         tutor.write_ints(i, t_file)
         with open(s_file) as sf, open(t_file) as tf:
             # read and compare the successive lines of both files
-            for s_line in sf:  # for each line is students file
+            for s_line in sf:  # for each line in students file
                 t_line = tf.readline()  # read a line of tutors file
-                assert s_line == t_line  # and test that they are equal
+                assert s_line == t_line or s_line == t_line[:-1] # and test that they are equal (apart from \n)
+
 
 ## end ##
+if __name__ == '__main__':
+    pass
+    # print(globals())

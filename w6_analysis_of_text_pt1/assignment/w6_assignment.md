@@ -291,8 +291,24 @@ occurrences with filename.
 **Hints:**\
 Use your function `count_words(filename)` for each word you put in the dictionary.
 
+## average_word_length(filename)
 
-## text_analysis_01(filename)
+The parameter is guaranteed to be the name of a text file encoded as utf-8. Read the file and return the
+average length of the words in the file. The average length is calculated as the (sum of the lengths of
+every word) / (number of words). <br/>For example:
+
+file content | return value
+-------------|-------------
+`''` |   `0`
+`'abd def xyz'` | `3`
+`'a bc def '`  |  `2`
+`'Andover and shandy'` | `float(16/3)`
+
+**Hints:**\
+Count the number of words and sum their lengths then calculate the arithmetic mean of their lengths. Be sure
+to guard against division by zero.
+
+## text_analysis(filename)
 
 The parameter is guaranteed to be the name of a text file encoded as utf-8. Read the file and return a tuple
 containing:
@@ -304,8 +320,8 @@ containing:
 
 Assume that:
 
-* All sentences are terminated by a period (full stop) or '!' or '?' followed by a space except for the last sentence in
-  the file which might be terminated by the end of the file or just a '.' or '!' or '?' mark.
+* All sentences are terminated by a period (full stop) or '!' or '?' followed by a space except for the last
+  sentence in the file which might be terminated by the end of the file or just a '.' or '!' or '?' mark.
 * The file contents are entirely prose-like text. There are no tables, diagrams or any other complexities of
   any kind.
 
@@ -328,7 +344,7 @@ parameter values | file content | return value
 
 **Hints:**\
 A `for` or `while` loop to generate the sequence of integers, and add the 'space-?-space' while iterating.\
-Alternatively, re-use you function num_seq_str and replace the comma-space with space-?-space. 
+Alternatively, re-use you function num_seq_str and replace the comma-space with space-?-space.
 
 ## write_ints(an_int, filename)
 
@@ -390,6 +406,5 @@ The parameter is guaranteed to be a word. Return the plural of that word.
 **Test Data:** Banana, Leaf, Trolley, Lorry, Sheep, Church, Sausage, Monkey, Knife, Child, Match, Poppy
 
 **Hints:**
-Given the variability and irregular structure of natural language there is no perfect version of
-this function and a balance needs to be struck between coverage and the ever-increasing complexity of the
-code.
+Given the variability and irregular structure of natural language there is no perfect version of this
+function and a balance needs to be struck between coverage and the ever-increasing complexity of the code.

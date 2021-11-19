@@ -1,5 +1,7 @@
 # Week 6 Assignment
 
+# from w6_analysis_of_text_pt1.assignment.w6_tests_helper_functions import *
+
 def thermostat(temperature):
     if temperature < 19:
         return "on"

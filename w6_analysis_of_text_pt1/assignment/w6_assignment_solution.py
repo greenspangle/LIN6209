@@ -2,7 +2,8 @@
 # Design, build and test the following functions.
 # Submit your python script with the filename 'w6_yourID.py'.
 # This is one version of the answers."""
-import string
+
+import string  # this module contains the whitespace() method
 
 
 def thermostat(temperature):
@@ -108,7 +109,7 @@ def num_seq_str_v2(an_int):
     # all component parts of result are now assembled in list
     # use str.join() method to assemble list elements into a string
     result = ' '.join(result)
-    return result[:-1]  # and return result minus the trailing comma+space
+    return result[:-2]  # and return result minus the trailing comma+space
 
 
 def num_seq_str_v3(an_int):
@@ -163,7 +164,7 @@ def num_seq_dict_v2(an_int):
 
 
 # the list comprehension is especially neat :-) but stick with the simpler v2
-num_seq_dict = num_seq_dict_v2
+num_seq_dict_ = num_seq_dict_v2
 
 
 def get_chars_set(filename):
@@ -185,7 +186,7 @@ def count_chars(filename):
     return len(contents)
 
 
-def count_Q_for(filename):
+def count_q_for(filename):
     """The parameter is guaranteed to be the name of a text file encoded as utf-8. Read the file and count the
     number of occurrences of the character ‘?’ (a question mark, unicode 63 decimal or 3F hexadecimal)."""
     with open(filename, 'r', encoding='utf_8') as f:
@@ -200,7 +201,7 @@ def count_Q_for(filename):
     return q_count
 
 
-def count_Q_while(filename):
+def count_q_while(filename):
     """Essentially the same as count_Q_for except using a 'while' loop."""
     with open(filename, 'r', encoding='utf_8') as f:
         # assume the file is not too big to chomp in a single mouthful ....
@@ -217,7 +218,7 @@ def count_Q_while(filename):
     return q_count
 
 
-def count_Q_method(filename):
+def count_q_method(filename):
     """The parameter is guaranteed to be the name of a text file encoded as utf-8. Read the file and count the
     number of occurrences of the character ‘?’ (a question mark, unicode 63 decimal or 3F hexadecimal)."""
     with open(filename, 'r', encoding='utf_8') as f:
@@ -228,7 +229,7 @@ def count_Q_method(filename):
 
 
 # all versions work (I hope!). Definitely always use ready-made object methods
-count_Q = count_Q_method
+count_Q = count_q_method
 
 
 def count_and(filename):
@@ -351,13 +352,13 @@ def text_analysis_01(filename):
 
     # count sentences
     s_count = 0
-    s_end = {'.', '!', '?'}
+    s_end = {'.', '!', '?'}  # some versions of assignment are just '.' at end of sentence
     # count occurrences of {'.', '?', '!'} followed by space
     for i in range(len(f_contents) - 1):
         if f_contents[i] in s_end and f_contents[i + 1] == ' ':
             s_count += 1
     # if the last character at the end of the file is not .?! then add 1 to sentence count
-    if len(f_contents) > 0 and f_contents[-1] not in s_end and not f_contents[-1].isspace() :
+    if len(f_contents) > 0 and f_contents[-1] not in s_end and not f_contents[-1].isspace():
         s_count += 1
 
     # count words
@@ -386,26 +387,22 @@ def text_analysis_01(filename):
     return s_count, w_count, wsp_char_not, wsp_char
 
 
-def write_Q(an_int, filename):
+def write_q(an_int, filename):
     """The parameters are guaranteed to be a positive integer **greater than zero** and a legal filename.
     Write the sequence of integers from 1 to an_int inclusive to a text file, with each integer separated
     from the next by the string ' ? ' (space, question mark, space). The return value should be the count
     of the total number of characters written to the file."""
     # open file for write
     with open(filename, 'w', encoding='utf-8') as f:
-        # iterate through the integers from 1 up to but not including an_int
-        # successively writing the integers etc to the file and counting the characters written
-        c_count = 0
-        for i in range(an_int):
-            # assemble a string to be written to file
-            i_str = str(i) + ' ? '
-            # write it to the file
-            f.write(i_str)
-            # update number of characters written
-            c_count += len(i_str)
-        # for the last integer, just write the integer, and update the counter
-        f.write(str(i))
-        c_count += len(str(i))
+        # iterate through the integers from 1 to an_int inclusive, counting the characters written
+        # an_int must be one or greater, so write '1' to file
+        f.write('1')
+        c_count = 1  # and set count of characters to one
+        # now write successive integers preceded by ' ? '
+        for i in range(2, an_int + 1):
+            a_str = ' ? ' + str(i)  # assemble string to be written,
+            c_count += len(a_str)  # update the count of characters,
+            f.write(' ? ' + str(i))  # and write to file
         # and return the count of characters written
         return c_count
 
@@ -421,7 +418,7 @@ def write_ints(an_int, filename):
     # open file for write
     with open(filename, 'w', encoding='utf-8') as f:
         # iterate through the integers from 0 up to an_int inclusive
-        for i in range(an_int + 1):
+        for i in range(1, an_int + 1):
             # for each successive i write a line to the file
             # each line is the sequence of multiples of i from 1*i to i*i separated by spaces
             for j in range(1, i):
