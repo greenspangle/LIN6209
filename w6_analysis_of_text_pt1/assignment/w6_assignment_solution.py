@@ -38,7 +38,7 @@ def score_2(dice_1, dice_2):
     return score
 
 
-def score_4(red1, red2, blue1, blue2):
+def score_4_v1(red1, red2, blue1, blue2):
     """The parameters are guaranteed to be integers between 1 and 6 inclusive. They represent the face values on
     the throw of four six-sided dice, two coloured red and two coloured blue. Calculate the score according to
     the rule:
@@ -68,6 +68,21 @@ def score_4(red1, red2, blue1, blue2):
     return score
 
 
+def score_4_v2(red1, red2, blue1, blue2):
+    if sorted([red1, red2, blue1, blue2]) == [3, 3, 4, 4]:
+        score = 21
+    elif (red1 + blue1 == 7 and red2 + blue2 == 7) or (red1 + blue2 == 7 and red2 + blue1 == 7):
+        score = 14
+    elif red1 + blue1 == 7 or red1 + blue2 == 7 or red2 + blue1 == 7 or red2 + blue2 == 7:
+        score = 7
+    else:
+        score = min((red1, red2, blue1, blue2))
+    return score
+
+
+score_4 = score_4_v2()
+
+
 def fizzbuzz(an_int):
     """The parameter is guaranteed to be a positive integer or zero.
         1 if `an_int` is a multiple of 3 return `'Fizz'`
@@ -84,7 +99,7 @@ def fizzbuzz(an_int):
         result += 'Buzz'  # append 'Fizz' to result  which has a current value of either '' or 'Fizz')
     # rule 3 - this is covered by the combination of statements '# rule 1' and '# rule 2'
     # rule 4
-    if result == '':  # result is still empty so apply default rule
+    if result == '':  # if result is still empty apply default rule
         result = str(an_int)
     return result
 

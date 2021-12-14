@@ -1,6 +1,6 @@
 # Week 6 Assignment
 import w6_assignment_solution as tutor
-from assignments.week6.submissions.Yash_Shah_17820963_assignsubmission_file_.w6_190349635_LIN6209_6     import  *
+from assignments.week6.submissions.Nayonica_Ghosh_17820976_assignsubmission_file_.w6_181103457_w6_2     import  *
 # from w6_assignment_solution import *
 from w6_tests_helper_functions import datafile
 
