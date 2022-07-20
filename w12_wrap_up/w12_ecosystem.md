@@ -218,6 +218,6 @@ assert seven(1) == 7
 Try the examples at [sqlzoo.net](https://sqlzoo.net/wiki/SQL_Tutorial)
 and [W3schools](https://www.w3schools.com/sql/default.asp)
 
-
 ## Version Control
+
 Git and GitHub are my preferences, there are others
